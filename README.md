@@ -41,21 +41,21 @@ Esta home page foi desenvolvida para apresentar os serviços da Trust Access de 
 
 ## 🛠️ Stack Tecnológica
 
-| Tecnologia | Versão | Descrição |
-|------------|--------|-----------|
-| **Next.js** | 15.0 | Framework React para produção |
-| **React** | 18.0 | Biblioteca para interfaces de usuário |
-| **TypeScript** | 5.0 | Superset tipado do JavaScript |
-| **Tailwind CSS** | 3.4 | Framework CSS utility-first |
-| **shadcn/ui** | Latest | Componentes UI acessíveis e customizáveis |
-| **Lucide React** | Latest | Biblioteca de ícones moderna |
-| **Radix UI** | Latest | Primitivos UI headless |
+| Tecnologia       | Versão | Descrição                                 |
+| ---------------- | ------ | ----------------------------------------- |
+| **Next.js**      | 15.0   | Framework React para produção             |
+| **React**        | 18.0   | Biblioteca para interfaces de usuário     |
+| **TypeScript**   | 5.0    | Superset tipado do JavaScript             |
+| **Tailwind CSS** | 3.4    | Framework CSS utility-first               |
+| **shadcn/ui**    | Latest | Componentes UI acessíveis e customizáveis |
+| **Lucide React** | Latest | Biblioteca de ícones moderna              |
+| **Radix UI**     | Latest | Primitivos UI headless                    |
 
 ## 📦 Instalação e Configuração
 
 ### Pré-requisitos
 
-- Node.js 18+ 
+- Node.js 18+
 - npm, yarn ou pnpm
 
 ### 🚀 Início Rápido
@@ -232,6 +232,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 📞 Contato
 
 **Trust Access**
+
 - Website: [www.trustaccess.com.br](https://www.trustaccess.com.br)
 - Email: contato@trustaccess.com.br
 - LinkedIn: [Trust Access](https://linkedin.com/company/trustaccess)
@@ -242,7 +243,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 **Desenvolvidta-home-page.vercel.appo com ❤️ para Trust Access**
 
-*Especialistas em IAM e Segurança Digital*
+_Especialistas em IAM e Segurança Digital_
 
 </div>
 ```
