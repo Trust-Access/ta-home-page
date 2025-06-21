@@ -162,7 +162,7 @@ export default function TrustAccessLanding() {
 								<div className='text-2xl font-bold text-gray-500'>MINING</div>
 							</div>
 							<div className='flex items-center justify-center'>
-								<div className='text-2xl font-bold text-gray-500'>HOTMART</div>
+								<div className='text-2xl font-bold text-gray-500'>CLIENT</div>
 							</div>
 							<div className='flex items-center justify-center'>
 								<div className='text-2xl font-bold text-gray-500'>ULTIMATE</div>
@@ -529,7 +529,7 @@ export default function TrustAccessLanding() {
 							<CardContent className='p-8'>
 								<div className='space-y-6'>
 									<div className='text-2xl font-bold text-gray-400 tracking-wider'>
-										VALE
+										CLIENT
 									</div>
 
 									<blockquote className='text-lg text-gray-700 leading-relaxed'>
@@ -600,7 +600,7 @@ export default function TrustAccessLanding() {
 											<div className='text-gray-600'>
 												Engenheiro Sênior de Segurança
 											</div>
-											<div className='text-gray-500'>Hotmart</div>
+											<div className='text-gray-500'>CLIENT</div>
 										</div>
 
 										<Link
