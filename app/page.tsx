@@ -120,16 +120,11 @@ export default function TrustAccessLanding() {
 							</h1>
 
 							<p className='text-xl text-gray-600 max-w-3xl leading-relaxed'>
-								Implementamos soluções robustas de gestão de identidades e
-								acessos. Com foco na experiência do usuário, eficiência
-								operacional e redução de riscos, garantimos que sua empresa
-								opere com segurança, controle e simplicidade.
+								Capacitamos empresas com soluções completas de IAM e CIAM, unindo autenticação, governança e segurança de aplicações e APIs. Garantimos controle de acesso eficiente, com foco em proteção e boa experiência do usuário.
 							</p>
 
 							<p className='text-lg text-gray-700 max-w-3xl leading-relaxed'>
-								Nossa criptografia simples e acessível oferece controle completo
-								sobre suas informações, em qualquer lugar que elas se
-								movam—mesmo quando compartilhadas fora da sua organização.
+								Oferecemos integrações, automação de onboarding/offboarding, suporte técnico e treinamentos. Operações mais seguras, ágeis e alinhadas com as exigências atuais de segurança digital.
 							</p>
 
 							<div className='pt-4'>
