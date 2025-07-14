@@ -33,19 +33,18 @@ export default function TrustAccessLanding() {
 							Trust Access
 						</span>
 					</div>
-
 					<nav className='hidden md:flex items-center space-x-8'>
 						<Link
 							href='#services'
 							className='text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors'
 						>
-							Serviços
+							Services
 						</Link>
 						<Link
 							href='#solutions'
 							className='text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors'
 						>
-							Soluções
+							Solutions
 						</Link>
 						<Link
 							href='#cases'
@@ -54,19 +53,24 @@ export default function TrustAccessLanding() {
 							Cases
 						</Link>
 						<Link
+							href='#portfolio'
+							className='text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors'
+						>
+							Portfolio
+						</Link>
+						<Link
 							href='#contact'
 							className='text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors'
 						>
-							Contato
+							Contact
 						</Link>
 					</nav>
-
 					<div className='flex items-center space-x-4'>
 						<Button variant='ghost' className='hidden md:inline-flex'>
 							Login
 						</Button>
 						<Button className='bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700'>
-							Agendar Demo
+							Book a Demo
 						</Button>
 						<Button variant='ghost' size='icon' className='md:hidden'>
 							<Menu className='h-5 w-5' />
@@ -520,7 +524,6 @@ export default function TrustAccessLanding() {
 					</div>
 				</div>
 			</section>
-
 			{/* Testimonials Section */}
 			<section id='cases' className='py-20 md:py-32 bg-gray-50'>
 				<div className='container px-4 md:px-6'>
@@ -616,7 +619,63 @@ export default function TrustAccessLanding() {
 					</div>
 				</div>
 			</section>
-
+			{/* Clients Section */}
+			<section className='py-20 md:py-32 bg-white'>
+				<div className='container max-w-screen-xl mx-auto px-4 md:px-6'>
+					<h2 className='text-3xl md:text-5xl font-bold text-center mb-16 text-gray-900'>
+						Clientes reais. Sucessos reais. Comprovados.
+					</h2>
+					<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+						{[
+							{
+								img: '/client01.jpg',
+								title: 'Acesso inteligente',
+								heading: 'Acesso seguro com 75% menos chamados',
+								desc: 'Após implementar nossa solução IAM, a equipe de suporte reduziu a carga operacional em três quartos, com acessos seguros e rastreáveis.',
+							},
+							{
+								img: '/client02.jpg',
+								title: 'Governança automatizada',
+								heading: 'Auditorias finalizadas 2x mais rápido',
+								desc: 'Automatizamos fluxos críticos de revisão de acesso, permitindo ciclos de auditoria mais curtos e com maior conformidade.',
+							},
+							{
+								img: '/client03.jpg',
+								title: 'Controle granular',
+								heading: 'Zero vazamentos em 18 meses',
+								desc: 'Com controles de acesso baseados em risco e contexto, a exposição de dados críticos foi completamente mitigada.',
+							},
+							{
+								img: '/client04.jpg',
+								title: 'Escalabilidade com segurança',
+								heading: 'IAM escalou com o crescimento de 4x da empresa',
+								desc: 'Mesmo com expansão acelerada, as políticas de acesso foram mantidas com segurança e sem reescrita de regras.',
+							},
+						].map(({ img, title, heading, desc }, idx) => (
+							<Card
+								key={idx}
+								className='overflow-hidden shadow-md border border-gray-100'
+							>
+								<Image
+									src={img}
+									alt={title}
+									width={500}
+									height={300}
+									className='w-full object-cover h-56'
+								/>
+								<CardContent className='p-6 space-y-4'>
+									<div className='text-sm text-gray-500'>{title}</div>
+									<h3 className='font-semibold text-lg text-gray-900'>
+										{heading}
+									</h3>
+									<p className='text-sm text-gray-600'>{desc}</p>
+									<span className='text-blue-600 text-xl'>→</span>
+								</CardContent>
+							</Card>
+						))}
+					</div>
+				</div>
+			</section>
 			{/* Demo Form Section */}
 			<section id='contact' className='py-20 md:py-32 bg-white'>
 				<div className='container px-4 md:px-6'>
