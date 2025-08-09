@@ -2,16 +2,16 @@ import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 
-const Header = dynamic(() => import('@/components/header'), { suspense: true });
-const Hero = dynamic(() => import('@/components/hero'), { suspense: true });
-const TrustSection = dynamic(() => import('@/components/trust-section'), { suspense: true });
-const ServicesSection = dynamic(() => import('@/components/services-section'), { suspense: true });
-const ComplianceSection = dynamic(() => import('@/components/compliance-section'), { suspense: true });
-const AuditSection = dynamic(() => import('@/components/audit-section'), { suspense: true });
-const TestimonialsSection = dynamic(() => import('@/components/testimonials-section'), { suspense: true });
-const ClientsSection = dynamic(() => import('@/components/clients-section'), { suspense: true });
-const DemoForm = dynamic(() => import('@/components/demo-form'), { suspense: true });
-const Footer = dynamic(() => import('@/components/footer'), { suspense: true });
+const Header = dynamic(() => import('@/components/header'));
+const Hero = dynamic(() => import('@/components/hero'));
+const TrustSection = dynamic(() => import('@/components/trust-section'));
+const ServicesSection = dynamic(() => import('@/components/services-section'));
+const ComplianceSection = dynamic(() => import('@/components/compliance-section'));
+const AuditSection = dynamic(() => import('@/components/audit-section'));
+const TestimonialsSection = dynamic(() => import('@/components/testimonials-section'));
+const ClientsSection = dynamic(() => import('@/components/clients-section'));
+const DemoForm = dynamic(() => import('@/components/demo-form'));
+const Footer = dynamic(() => import('@/components/footer'));
 
 export default function TrustAccessLanding() {
   return (
