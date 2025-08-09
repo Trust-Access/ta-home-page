@@ -1,11 +1,12 @@
-import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import { siteConfig } from '@/lib/config';
-import { QueryProvider } from '@/components/templates/query-provider';
-import { I18nProvider } from '@/lib/i18n';
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { siteConfig } from "@/lib/config";
+import { QueryProvider } from "@/components/templates/query-provider";
+import { I18nProvider } from "@/lib/i18n";
+import { ThemeProvider } from "@/components/templates/theme-provider";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -14,22 +15,22 @@ export const metadata: Metadata = {
   },
   description: `${siteConfig.name} is a cybersecurity consultancy specialized in authentication, identity, and access management (IAM). Secure, automate, and scale access for your business.`,
   applicationName: siteConfig.name,
-  generator: 'Next.js',
+  generator: "Next.js",
   keywords: [
-    'Identity and Access Management',
-    'IAM',
-    'Cybersecurity',
-    'Authentication',
-    'Governance',
-    'MFA',
-    'SSO',
+    "Identity and Access Management",
+    "IAM",
+    "Cybersecurity",
+    "Authentication",
+    "Governance",
+    "MFA",
+    "SSO",
     siteConfig.name,
   ],
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     title: `${siteConfig.name} | Identity & Access Management`,
     description:
-      'Secure, automate, and scale identity and access for your organization.',
+      "Secure, automate, and scale identity and access for your organization.",
     url: siteConfig.url,
     siteName: siteConfig.name,
     images: [
@@ -40,42 +41,48 @@ export const metadata: Metadata = {
         alt: siteConfig.name,
       },
     ],
-    locale: 'pt_BR',
-    type: 'website',
+    locale: "pt_BR",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: `${siteConfig.name} | Identity & Access Management`,
     description:
-      'Secure, automate, and scale identity and access for your organization.',
+      "Secure, automate, and scale identity and access for your organization.",
     images: [siteConfig.ogImage],
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
-  manifest: '/site.webmanifest',
+  manifest: "/site.webmanifest",
   robots: {
     index: true,
     follow: true,
   },
-  category: 'Technology',
+  category: "Technology",
 };
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
-  themeColor: '#0A0A0A',
+  themeColor: "#0A0A0A",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang='pt'>
+    <html lang="pt">
       <body className={inter.className}>
-        <I18nProvider>
-          <QueryProvider>{children}</QueryProvider>
-        </I18nProvider>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <I18nProvider>
+            <QueryProvider>{children}</QueryProvider>
+          </I18nProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
