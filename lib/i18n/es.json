@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "services": "Servicios",
+    "solutions": "Soluciones",
+    "cases": "Casos",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
+  "header": {
+    "login": "Iniciar sesión",
+    "bookDemo": "Reservar una demo"
+  },
+  "hero": {
+    "title": "IAM y Seguridad como Servicio para",
+    "highlight": "Operaciones Seguras",
+    "description1": "Capacitamos empresas con soluciones completas de IAM y CIAM, uniendo autenticación, gobernanza y seguridad de aplicaciones y API. Garantizamos control de acceso eficiente, enfocado en protección y una buena experiencia de usuario.",
+    "description2": "Ofrecemos integraciones, automatización de onboarding/offboarding, soporte técnico y capacitaciones. Operaciones más seguras, ágiles y alineadas con las exigencias actuales de seguridad digital.",
+    "cta": "Programar Demo"
+  }
+}

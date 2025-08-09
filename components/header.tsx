@@ -1,10 +1,15 @@
+"use client";
+
 import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { navItems } from '@/data/navigation';
+import LanguageSwitcher from './language-switcher';
+import { useI18n } from '@/lib/i18n';
 
 export default function Header() {
+  const { t } = useI18n();
   return (
     <header className='sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60'>
       <div className='container flex h-16 items-center justify-between px-4 md:px-6'>
@@ -28,16 +33,17 @@ export default function Header() {
               href={href}
               className='text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors'
             >
-              {label}
+              {t(label)}
             </Link>
           ))}
         </nav>
         <div className='flex items-center space-x-4'>
+          <LanguageSwitcher />
           <Button variant='ghost' className='hidden md:inline-flex'>
-            Login
+            {t('header.login')}
           </Button>
           <Button className='bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700'>
-            Book a Demo
+            {t('header.bookDemo')}
           </Button>
           <Button variant='ghost' size='icon' className='md:hidden'>
             <Menu className='h-5 w-5' />

@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "services": "Services",
+    "solutions": "Solutions",
+    "cases": "Cases",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "header": {
+    "login": "Login",
+    "bookDemo": "Book a Demo"
+  },
+  "hero": {
+    "title": "IAM & Security as a Service for",
+    "highlight": "Secure Operations",
+    "description1": "We empower companies with complete IAM and CIAM solutions, combining authentication, governance and application and API security. We ensure efficient access control with focus on protection and a great user experience.",
+    "description2": "We offer integrations, onboarding/offboarding automation, technical support and training. Safer, more agile operations aligned with today's digital security requirements.",
+    "cta": "Schedule Demo"
+  }
+}

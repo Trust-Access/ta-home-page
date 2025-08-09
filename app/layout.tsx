@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/lib/config';
 import { QueryProvider } from '@/components/query-provider';
+import { I18nProvider } from '@/lib/i18n';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -68,15 +69,13 @@ export const viewport: Viewport = {
   themeColor: '#0A0A0A',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='pt-BR'>
+    <html lang='pt'>
       <body className={inter.className}>
-        <QueryProvider>{children}</QueryProvider>
+        <I18nProvider>
+          <QueryProvider>{children}</QueryProvider>
+        </I18nProvider>
       </body>
     </html>
   );
