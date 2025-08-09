@@ -8,8 +8,15 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/atoms/ui/select";
+import { cn } from "@/lib/utils";
 
-export default function LanguageSwitcher() {
+interface LanguageSwitcherProps {
+  className?: string;
+}
+
+export default function LanguageSwitcher({
+  className,
+}: LanguageSwitcherProps) {
   const { t, locale, setLocale } = useI18n();
   const languages: { value: Locale; label: string; flag: string }[] = [
     { value: "en", label: t("languages.en"), flag: "🇺🇸" },
@@ -19,7 +26,7 @@ export default function LanguageSwitcher() {
 
   return (
     <Select value={locale} onValueChange={(v) => setLocale(v as Locale)}>
-      <SelectTrigger className="w-[120px]">
+      <SelectTrigger className={cn("w-full md:w-[120px]", className)}>
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
