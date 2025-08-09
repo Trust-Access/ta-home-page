@@ -3,8 +3,8 @@
 Uma home page moderna e responsiva para a **Trust Access**, consultoria especializada em **IAM (Identity and Access Management)** e segurança digital.
 
 ![Trust Access](https://img.shields.io/badge/Trust%20Access-IAM%20%26%20Security-blue?style=for-the-badge)
-![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-15.2-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 
 ## 🚀 Sobre o Projeto
@@ -44,9 +44,9 @@ Esta home page foi desenvolvida para apresentar os serviços da Trust Access de 
 
 | Tecnologia       | Versão | Descrição                                 |
 | ---------------- | ------ | ----------------------------------------- |
-| **Next.js**      | 15.0   | Framework React para produção             |
-| **React**        | 18.0   | Biblioteca para interfaces de usuário     |
-| **TypeScript**   | 5.0    | Superset tipado do JavaScript             |
+| **Next.js**      | 15.2.4 | Framework React para produção             |
+| **React**        | 19.1.1 | Biblioteca para interfaces de usuário     |
+| **TypeScript**   | 5.9    | Superset tipado do JavaScript             |
 | **Tailwind CSS** | 3.4    | Framework CSS utility-first               |
 | **shadcn/ui**    | Latest | Componentes UI acessíveis e customizáveis |
 | **Lucide React** | Latest | Biblioteca de ícones moderna              |
@@ -218,7 +218,11 @@ npm run dev          # Servidor de desenvolvimento
 npm run build        # Build para produção
 npm run start        # Servidor de produção
 npm run lint         # Verificação de código
-npm run type-check   # Verificação de tipos TypeScript
+npm run format       # Formata o código com Prettier
+npm test             # Executa os testes com Vitest
+npm run storybook    # Ambiente de componentes com Storybook
+npm run build-storybook # Build estático do Storybook
+npm run test-storybook # Testes do Storybook
 ```
 
 ## 🐛 Solução de Problemas
