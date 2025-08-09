@@ -48,7 +48,7 @@ export default function ComplianceSection() {
                     </div>
                     <div className='flex items-center space-x-2'>
                       <Checkbox checked />
-                      <span className='text-xs'>Marca d'água</span>
+                      <span className='text-xs'>Marca d&apos;água</span>
                     </div>
                     <div className='flex items-center space-x-2'>
                       <Checkbox checked />
