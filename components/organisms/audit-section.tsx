@@ -1,8 +1,10 @@
 import { Button } from '@/components/atoms/ui/button';
 import Image from 'next/image';
 import { BLUR_PLACEHOLDER } from '@/lib/blur';
+import { useI18n } from '@/lib/i18n';
 
 export default function AuditSection() {
+  const { t } = useI18n();
   return (
     <section className='py-20 md:py-32'>
       <div className='container px-4 md:px-6'>
@@ -10,10 +12,10 @@ export default function AuditSection() {
           <div className='space-y-8'>
             <div className='space-y-6'>
               <h3 className='text-3xl font-bold text-gray-900'>
-                Auditar e Controlar o Fluxo de Dados Dentro e Fora da Sua Organização
+                {t('audit.title')}
               </h3>
               <p className='text-lg text-gray-600 leading-relaxed'>
-                Proteja dados em movimento, seja um e-mail de entrada ou uma mensagem de saída, ou uma página de sistema interno. Com a Trust Access, você pode alterar ou revogar permissões de acesso a qualquer momento.
+                {t('audit.description')}
               </p>
             </div>
           </div>
@@ -21,7 +23,7 @@ export default function AuditSection() {
             <div className='bg-gradient-to-br from-purple-100 via-pink-50 to-purple-100 rounded-3xl p-8 relative overflow-hidden'>
               <Image
                 src='/placeholder.svg?height=400&width=600'
-                alt='Data audit and control'
+                alt={t('audit.imageAlt')}
                 width={600}
                 height={400}
                 className='rounded-lg shadow-lg'
@@ -32,7 +34,7 @@ export default function AuditSection() {
               {/* Mock Email Interface Overlay */}
               <div className='absolute top-8 right-8 bg-white rounded-lg shadow-xl p-4 w-72'>
                 <div className='flex items-center space-x-2 mb-4'>
-                  <div className='text-sm font-medium text-blue-600'>Para</div>
+                  <div className='text-sm font-medium text-blue-600'>{t('common.to')}</div>
                   <div className='flex items-center space-x-2 bg-gray-100 rounded-full px-3 py-1'>
                     <div className='w-6 h-6 bg-gray-400 rounded-full'></div>
                     <span className='text-sm'>admin@empresa.com.br</span>
@@ -42,7 +44,7 @@ export default function AuditSection() {
                   </div>
                 </div>
                 <div className='flex items-center space-x-2 mb-6'>
-                  <div className='text-sm font-medium text-gray-600'>De</div>
+                  <div className='text-sm font-medium text-gray-600'>{t('common.from')}</div>
                   <div className='flex items-center space-x-2 bg-gray-100 rounded-full px-3 py-1'>
                     <div className='w-6 h-6 bg-green-500 rounded-full'></div>
                     <span className='text-sm'>contato@trustaccess.com.br</span>
@@ -54,7 +56,7 @@ export default function AuditSection() {
                 <div className='bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4'>
                   <Image
                     src='/placeholder.svg?height=200&width=250'
-                    alt='Email content preview'
+                    alt={t('audit.emailAlt')}
                     width={250}
                     height={200}
                     className='rounded-lg w-full'
@@ -63,9 +65,9 @@ export default function AuditSection() {
                     blurDataURL={BLUR_PLACEHOLDER}
                   />
                   <div className='mt-4 flex items-center justify-between'>
-                    <span className='text-sm font-medium text-blue-700'>Proteção</span>
+                    <span className='text-sm font-medium text-blue-700'>{t('common.protection')}</span>
                     <div className='flex items-center space-x-2'>
-                      <span className='text-xs text-blue-600'>ON</span>
+                      <span className='text-xs text-blue-600'>{t('common.on')}</span>
                       <div className='w-8 h-4 bg-blue-500 rounded-full relative'>
                         <div className='w-3 h-3 bg-white rounded-full absolute right-0.5 top-0.5'></div>
                       </div>

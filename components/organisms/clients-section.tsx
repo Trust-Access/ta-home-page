@@ -1,13 +1,15 @@
 import { Card, CardContent } from '@/components/atoms/ui/card';
 import Image from 'next/image';
 import { clientCases } from '@/data/client-cases';
+import { useI18n } from '@/lib/i18n';
 
 export default function ClientsSection() {
+  const { t } = useI18n();
   return (
     <section className='py-20 md:py-32 bg-white'>
       <div className='container max-w-screen-xl mx-auto px-4 md:px-6'>
         <h2 className='text-3xl md:text-5xl font-bold text-center mb-16 text-gray-900'>
-          Clientes reais. Sucessos reais. Comprovados.
+          {t('clients.heading')}
         </h2>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
           {clientCases.map(({ img, title, heading, desc }, idx) => (

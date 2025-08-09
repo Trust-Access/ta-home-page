@@ -16,5 +16,80 @@
     "description1": "We empower companies with complete IAM and CIAM solutions, combining authentication, governance and application and API security. We ensure efficient access control with focus on protection and a great user experience.",
     "description2": "We offer integrations, onboarding/offboarding automation, technical support and training. Safer, more agile operations aligned with today's digital security requirements.",
     "cta": "Schedule Demo"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "pt": "Português"
+  },
+  "common": {
+    "to": "To",
+    "from": "From",
+    "protection": "Protection",
+    "on": "On",
+    "watermark": "Watermark",
+    "week": "Week",
+    "month": "Month"
+  },
+  "audit": {
+    "title": "Audit and Control Data Flow Inside and Outside Your Organization",
+    "description": "Protect data in motion, whether an incoming email or an outgoing message, or an internal system page. With Trust Access, you can change or revoke access permissions at any time.",
+    "imageAlt": "Data audit and control",
+    "emailAlt": "Email content preview"
+  },
+  "compliance": {
+    "imageAlt": "Professional working on compliance",
+    "reportTitle": "Quarterly Report",
+    "open": "Opened",
+    "openedByMe": "5:05 PM by me",
+    "created": "Created",
+    "createdWith": "5:05 PM with Trust Access for Drive",
+    "disableResharing": "Disable re-sharing",
+    "expirationNote": "Expiration date (click to reset)",
+    "revokeAccess": "Revoke Access for all Guests",
+    "allowedUsers": "Allowed Users (3)",
+    "accessed": "Accessed 12 minutes ago",
+    "title": "Strengthen Compliance",
+    "description": "Whether in finance, manufacturing, education or health, Trust Access encryption and access controls support even the most rigorous regulations, including LGPD, GDPR, ISO 27001, SOC 2, and many others."
+  },
+  "services": {
+    "intro": "With Trust Access, you can:",
+    "title": "Protect Sensitive Data Without Limiting Your Ability to Share It",
+    "description": "Trust Access makes it easy to add protection to emails, files, attachments and even data flowing through other SaaS applications—no new accounts needed. This protection extends beyond your organization’s perimeter to provide auditable control even after data leaves your network.",
+    "messageOptions": "MESSAGE OPTIONS",
+    "disableForwarding": "Disable Forwarding",
+    "expirationDate": "Expiration Date",
+    "attachmentOptions": "ATTACHMENT OPTIONS",
+    "persistentProtection": "Persistent Protection"
+  },
+  "trust": {
+    "before": "More than",
+    "highlight": "500+ COMPANIES",
+    "after": "trust Trust Access for security and access management."
+  },
+  "clients": {
+    "heading": "Real clients. Real successes. Proven."
+  },
+  "footer": {
+    "tagline": "Experts in IAM and digital security. We implement robust identity and access management solutions.",
+    "services": "Services",
+    "serviceItems": {
+      "iamImplementation": "IAM Implementation",
+      "securityConsulting": "Security Consulting",
+      "processAutomation": "Process Automation",
+      "techSupport": "Technical Support"
+    },
+    "company": "Company",
+    "companyItems": {
+      "about": "About Us",
+      "cases": "Success Stories",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "lgpd": "LGPD"
   }
 }

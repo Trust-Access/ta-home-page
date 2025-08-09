@@ -8,24 +8,26 @@ import {
   SelectValue,
 } from '@/components/atoms/ui/select';
 import { Users, Shield, Lock } from 'lucide-react';
+import { useI18n } from '@/lib/i18n';
 
 export default function ServicesSection() {
+  const { t } = useI18n();
   return (
     <section id='services' className='py-20 md:py-32'>
       <div className='container px-4 md:px-6'>
         <div className='text-center space-y-4 mb-16'>
           <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-blue-600'>
-            Com a Trust Access, você pode:
+            {t('services.intro')}
           </h2>
         </div>
         <div className='grid gap-16 lg:grid-cols-2 items-center'>
           <div className='space-y-8'>
             <div className='space-y-6'>
               <h3 className='text-3xl font-bold text-gray-900'>
-                Proteger Dados Sensíveis Sem Limitar Sua Capacidade de Compartilhá-los
+                {t('services.title')}
               </h3>
               <p className='text-lg text-gray-600 leading-relaxed'>
-                A Trust Access facilita a adição de proteção a e-mails, arquivos, anexos e até mesmo dados fluindo através de outros aplicativos SaaS – sem necessidade de novas contas. Essa proteção se estende além do perímetro da sua organização para dar controle auditável mesmo depois que os dados saíram da sua rede.
+                {t('services.description')}
               </p>
             </div>
           </div>
@@ -38,7 +40,7 @@ export default function ServicesSection() {
                     <Users className='w-4 h-4 text-white' />
                   </div>
                   <div className='flex-1'>
-                    <div className='text-sm text-gray-500'>Para</div>
+                    <div className='text-sm text-gray-500'>{t('common.to')}</div>
                     <div className='font-medium'>admin@empresa.com.br</div>
                   </div>
                   <Button size='sm' variant='ghost'>
@@ -50,7 +52,7 @@ export default function ServicesSection() {
                     <Users className='w-4 h-4 text-white' />
                   </div>
                   <div className='flex-1'>
-                    <div className='text-sm text-gray-500'>De</div>
+                    <div className='text-sm text-gray-500'>{t('common.from')}</div>
                     <div className='font-medium'>contato@trustaccess.com.br</div>
                   </div>
                   <Button size='sm' variant='ghost'>
@@ -59,26 +61,26 @@ export default function ServicesSection() {
                 </div>
                 <div className='bg-blue-50 rounded-lg p-4 space-y-3'>
                   <div className='flex items-center justify-between'>
-                    <span className='text-sm font-medium text-blue-700'>OPÇÕES DE MENSAGEM</span>
+                    <span className='text-sm font-medium text-blue-700'>{t('services.messageOptions')}</span>
                     <div className='flex items-center space-x-2'>
-                      <span className='text-xs text-blue-600'>Proteção</span>
+                      <span className='text-xs text-blue-600'>{t('common.protection')}</span>
                       <div className='w-8 h-4 bg-blue-500 rounded-full relative'>
                         <div className='w-3 h-3 bg-white rounded-full absolute right-0.5 top-0.5'></div>
                       </div>
-                      <span className='text-xs font-medium text-blue-600'>ON</span>
+                      <span className='text-xs font-medium text-blue-600'>{t('common.on')}</span>
                     </div>
                   </div>
                   <div className='space-y-2'>
                     <div className='flex items-center space-x-2'>
                       <Shield className='w-4 h-4 text-blue-500' />
-                      <span className='text-sm'>Desabilitar Encaminhamento</span>
+                      <span className='text-sm'>{t('services.disableForwarding')}</span>
                       <div className='ml-auto w-8 h-4 bg-blue-500 rounded-full relative'>
                         <div className='w-3 h-3 bg-white rounded-full absolute right-0.5 top-0.5'></div>
                       </div>
                     </div>
                     <div className='flex items-center space-x-2'>
                       <Users className='w-4 h-4 text-blue-500' />
-                      <span className='text-sm'>Data de Expiração</span>
+                      <span className='text-sm'>{t('services.expirationDate')}</span>
                       <div className='ml-auto w-8 h-4 bg-blue-500 rounded-full relative'>
                         <div className='w-3 h-3 bg-white rounded-full absolute right-0.5 top-0.5'></div>
                       </div>
@@ -88,27 +90,27 @@ export default function ServicesSection() {
                     <Input placeholder='1' className='w-16 h-8' />
                     <Select>
                       <SelectTrigger className='w-24 h-8'>
-                        <SelectValue placeholder='Semana' />
+                        <SelectValue placeholder={t('common.week')} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value='week'>Semana</SelectItem>
-                        <SelectItem value='month'>Mês</SelectItem>
+                        <SelectItem value='week'>{t('common.week')}</SelectItem>
+                        <SelectItem value='month'>{t('common.month')}</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                   <div className='text-xs text-gray-500'>14/7/2024 @ 10:04 AM</div>
                   <div className='border-t pt-3 space-y-2'>
-                    <div className='text-sm font-medium text-blue-700'>OPÇÕES DE ANEXO</div>
+                    <div className='text-sm font-medium text-blue-700'>{t('services.attachmentOptions')}</div>
                     <div className='flex items-center space-x-2'>
                       <Lock className='w-4 h-4 text-blue-500' />
-                      <span className='text-sm'>Marca d&apos;água</span>
+                      <span className='text-sm'>{t('common.watermark')}</span>
                       <div className='ml-auto w-8 h-4 bg-blue-500 rounded-full relative'>
                         <div className='w-3 h-3 bg-white rounded-full absolute right-0.5 top-0.5'></div>
                       </div>
                     </div>
                     <div className='flex items-center space-x-2'>
                       <Shield className='w-4 h-4 text-blue-500' />
-                      <span className='text-sm'>Proteção Persistente</span>
+                      <span className='text-sm'>{t('services.persistentProtection')}</span>
                       <div className='ml-auto w-8 h-4 bg-blue-500 rounded-full relative'>
                         <div className='w-3 h-3 bg-white rounded-full absolute right-0.5 top-0.5'></div>
                       </div>
