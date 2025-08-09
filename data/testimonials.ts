@@ -1,20 +1,23 @@
 import { StaticImageData } from 'next/image';
+import { z } from 'zod';
 import placeholder from '@/public/placeholder.jpg';
 
-export interface Testimonial {
-  company: string;
-  quote: string;
-  name: string;
-  role: string;
-  companyTag: string;
-  link: string;
-  linkText: string;
-  heading?: string;
-  image?: StaticImageData;
-  imageAlt?: string;
-}
+export const TestimonialSchema = z.object({
+  company: z.string(),
+  quote: z.string(),
+  name: z.string(),
+  role: z.string(),
+  companyTag: z.string(),
+  link: z.string(),
+  linkText: z.string(),
+  heading: z.string().optional(),
+  image: z.custom<StaticImageData>().optional(),
+  imageAlt: z.string().optional(),
+});
 
-export const testimonials: Testimonial[] = [
+export type Testimonial = z.infer<typeof TestimonialSchema>;
+
+const testimonialsData: Testimonial[] = [
   {
     company: 'CLIENT',
     quote:
@@ -40,3 +43,6 @@ export const testimonials: Testimonial[] = [
     imageAlt: 'Professional using Trust Access',
   },
 ];
+
+export const testimonialsSchema = z.array(TestimonialSchema);
+export const testimonials = testimonialsSchema.parse(testimonialsData);

@@ -1,17 +1,20 @@
 import { StaticImageData } from 'next/image';
+import { z } from 'zod';
 import client01 from '@/public/client01.jpg';
 import client02 from '@/public/client02.jpg';
 import client03 from '@/public/client03.jpg';
 import client04 from '@/public/client04.jpg';
 
-export interface ClientCase {
-  img: StaticImageData;
-  title: string;
-  heading: string;
-  desc: string;
-}
+export const ClientCaseSchema = z.object({
+  img: z.custom<StaticImageData>(),
+  title: z.string(),
+  heading: z.string(),
+  desc: z.string(),
+});
 
-export const clientCases: ClientCase[] = [
+export type ClientCase = z.infer<typeof ClientCaseSchema>;
+
+const clientCasesData: ClientCase[] = [
   {
     img: client01,
     title: 'Acesso inteligente',
@@ -37,3 +40,6 @@ export const clientCases: ClientCase[] = [
     desc: 'Mesmo com expansão acelerada, as políticas de acesso foram mantidas com segurança e sem reescrita de regras.',
   },
 ];
+
+export const clientCasesSchema = z.array(ClientCaseSchema);
+export const clientCases = clientCasesSchema.parse(clientCasesData);
