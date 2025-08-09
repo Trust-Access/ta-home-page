@@ -12,7 +12,15 @@ export default function ClientsSection() {
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
           {clientCases.map(({ img, title, heading, desc }, idx) => (
             <Card key={idx} className='overflow-hidden shadow-md border border-gray-100'>
-              <Image src={img} alt={title} width={500} height={300} className='w-full object-cover h-56' />
+              <Image
+                src={img}
+                alt={title}
+                width={500}
+                height={300}
+                className='w-full object-cover h-56'
+                loading='lazy'
+                placeholder='blur'
+              />
               <CardContent className='p-6 space-y-4'>
                 <div className='text-sm text-gray-500'>{title}</div>
                 <h3 className='font-semibold text-lg text-gray-900'>{heading}</h3>

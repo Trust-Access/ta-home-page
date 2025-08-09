@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { BLUR_PLACEHOLDER } from '@/lib/blur';
 
 export default function AuditSection() {
   return (
@@ -24,6 +25,9 @@ export default function AuditSection() {
                 width={600}
                 height={400}
                 className='rounded-lg shadow-lg'
+                loading='lazy'
+                placeholder='blur'
+                blurDataURL={BLUR_PLACEHOLDER}
               />
               {/* Mock Email Interface Overlay */}
               <div className='absolute top-8 right-8 bg-white rounded-lg shadow-xl p-4 w-72'>
@@ -54,6 +58,9 @@ export default function AuditSection() {
                     width={250}
                     height={200}
                     className='rounded-lg w-full'
+                    loading='lazy'
+                    placeholder='blur'
+                    blurDataURL={BLUR_PLACEHOLDER}
                   />
                   <div className='mt-4 flex items-center justify-between'>
                     <span className='text-sm font-medium text-blue-700'>Proteção</span>

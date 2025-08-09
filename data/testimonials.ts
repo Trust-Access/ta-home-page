@@ -1,3 +1,6 @@
+import { StaticImageData } from 'next/image';
+import placeholder from '@/public/placeholder.jpg';
+
 export interface Testimonial {
   company: string;
   quote: string;
@@ -7,7 +10,7 @@ export interface Testimonial {
   link: string;
   linkText: string;
   heading?: string;
-  image?: string;
+  image?: StaticImageData;
   imageAlt?: string;
 }
 
@@ -33,7 +36,7 @@ export const testimonials: Testimonial[] = [
     companyTag: 'CLIENT',
     link: '#',
     linkText: 'Ler o Caso →',
-    image: '/placeholder.svg?height=300&width=500',
+    image: placeholder,
     imageAlt: 'Professional using Trust Access',
   },
 ];
