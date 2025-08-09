@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent } from '@/components/atoms/ui/card';
 import Image from 'next/image';
 import { clientCases } from '@/data/client-cases';

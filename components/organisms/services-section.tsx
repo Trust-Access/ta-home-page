@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from '@/components/atoms/ui/button';
 import { Input } from '@/components/atoms/ui/input';
 import {

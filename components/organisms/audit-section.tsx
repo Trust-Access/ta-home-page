@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from '@/components/atoms/ui/button';
 import Image from 'next/image';
 import { BLUR_PLACEHOLDER } from '@/lib/blur';

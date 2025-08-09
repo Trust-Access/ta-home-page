@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from '@/components/atoms/ui/button';
 import { Checkbox } from '@/components/atoms/ui/checkbox';
 import Image from 'next/image';
