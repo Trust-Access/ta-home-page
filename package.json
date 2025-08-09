@@ -10,7 +10,8 @@
     "test": "vitest",
     "format": "prettier --write .",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -81,7 +82,9 @@
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.4.6",
     "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
     "jsdom": "^26.1.0",
+    "lint-staged": "^16.1.5",
     "postcss": "^8.5",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
@@ -89,5 +92,14 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5",
     "vitest": "^3.2.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
   }
 }
