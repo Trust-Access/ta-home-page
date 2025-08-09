@@ -101,7 +101,7 @@ export default function ServicesSection() {
                     <div className='text-sm font-medium text-blue-700'>OPÇÕES DE ANEXO</div>
                     <div className='flex items-center space-x-2'>
                       <Lock className='w-4 h-4 text-blue-500' />
-                      <span className='text-sm'>Marca d'água</span>
+                      <span className='text-sm'>Marca d&apos;água</span>
                       <div className='ml-auto w-8 h-4 bg-blue-500 rounded-full relative'>
                         <div className='w-3 h-3 bg-white rounded-full absolute right-0.5 top-0.5'></div>
                       </div>
