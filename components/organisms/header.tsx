@@ -18,7 +18,7 @@ import { useI18n } from "@/lib/i18n";
 export default function Header() {
   const { t } = useI18n();
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center space-x-3">
           <Image
@@ -38,7 +38,7 @@ export default function Header() {
             <Link
               key={href}
               href={href}
-              className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {t(label)}
             </Link>
@@ -65,7 +65,7 @@ export default function Header() {
                   <SheetClose asChild key={href}>
                     <Link
                       href={href}
-                      className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
+                      className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {t(label)}
                     </Link>

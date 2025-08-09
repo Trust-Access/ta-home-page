@@ -9,11 +9,11 @@ import { useI18n } from '@/lib/i18n';
 export default function ComplianceSection() {
   const { t } = useI18n();
   return (
-    <section className='py-20 md:py-32 bg-gray-50'>
+    <section className='py-20 md:py-32 bg-background'>
       <div className='container px-4 md:px-6'>
         <div className='grid gap-16 lg:grid-cols-2 items-center'>
           <div className='relative'>
-            <div className='bg-gradient-to-br from-teal-100 via-blue-100 to-cyan-100 rounded-3xl p-8 relative overflow-hidden'>
+            <div className='bg-gradient-to-br from-teal-100 via-blue-100 to-cyan-100 dark:from-teal-900 dark:via-blue-900 dark:to-cyan-900 rounded-3xl p-8 relative overflow-hidden'>
               <Image
                 src='/placeholder.svg?height=400&width=600'
                 alt={t('compliance.imageAlt')}
@@ -25,26 +25,26 @@ export default function ComplianceSection() {
                 blurDataURL={BLUR_PLACEHOLDER}
               />
               {/* Mock File Interface Overlay */}
-              <div className='absolute top-12 right-8 bg-white rounded-lg shadow-xl p-4 w-64'>
+              <div className='absolute top-12 right-8 bg-card rounded-lg shadow-xl p-4 w-64'>
                 <div className='flex items-center space-x-2 mb-3'>
                   <div className='w-6 h-6 bg-red-500 rounded flex items-center justify-center'>
                     <span className='text-white text-xs'>PDF</span>
                   </div>
                   <div className='flex-1'>
                     <div className='text-sm font-medium'>{t('compliance.reportTitle')}</div>
-                    <div className='text-xs text-gray-500'>Empresa.pdf.tdf</div>
+                    <div className='text-xs text-muted-foreground'>Empresa.pdf.tdf</div>
                   </div>
                   <Button size='sm' variant='ghost'>
-                    <span className='text-gray-400'>×</span>
+                    <span className='text-muted-foreground'>×</span>
                   </Button>
                 </div>
                 <div className='space-y-2 text-xs'>
                   <div className='flex justify-between'>
-                    <span className='text-gray-600'>{t('compliance.open')}</span>
+                    <span className='text-muted-foreground'>{t('compliance.open')}</span>
                     <span>{t('compliance.openedByMe')}</span>
                   </div>
                   <div className='flex justify-between'>
-                    <span className='text-gray-600'>{t('compliance.created')}</span>
+                    <span className='text-muted-foreground'>{t('compliance.created')}</span>
                     <span>{t('compliance.createdWith')}</span>
                   </div>
                 </div>
@@ -63,7 +63,7 @@ export default function ComplianceSection() {
                       <span className='text-xs'>{t('compliance.expirationNote')}</span>
                     </div>
                   </div>
-                  <div className='text-xs text-gray-500 mt-2'>16 de fevereiro, 2023 1:45 PM</div>
+                  <div className='text-xs text-muted-foreground mt-2'>16 de fevereiro, 2023 1:45 PM</div>
                   <div className='mt-3 pt-2 border-t'>
                     <div className='flex items-center space-x-1 text-red-600 text-xs'>
                       <span className='w-2 h-2 bg-red-500 rounded-full'></span>
@@ -72,11 +72,11 @@ export default function ComplianceSection() {
                     <div className='mt-2 text-xs font-medium'>{t('compliance.allowedUsers')}</div>
                     <div className='space-y-1 mt-1'>
                       <div className='flex items-center space-x-2'>
-                        <div className='w-4 h-4 bg-gray-300 rounded-full'></div>
+                        <div className='w-4 h-4 bg-muted rounded-full'></div>
                         <span className='text-xs'>admin@empresa.com.br</span>
                       </div>
                       <div className='flex items-center space-x-2'>
-                        <div className='w-4 h-4 bg-gray-300 rounded-full'></div>
+                        <div className='w-4 h-4 bg-muted rounded-full'></div>
                         <span className='text-xs'>user@empresa.com.br</span>
                       </div>
                       <div className='flex items-center space-x-2'>
@@ -92,8 +92,8 @@ export default function ComplianceSection() {
           </div>
           <div className='space-y-8'>
             <div className='space-y-6'>
-              <h3 className='text-3xl font-bold text-gray-900'>{t('compliance.title')}</h3>
-              <p className='text-lg text-gray-600 leading-relaxed'>
+              <h3 className='text-3xl font-bold text-foreground'>{t('compliance.title')}</h3>
+              <p className='text-lg text-muted-foreground leading-relaxed'>
                 {t('compliance.description')}
               </p>
             </div>
