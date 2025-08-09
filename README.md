@@ -23,7 +23,7 @@ Esta home page foi desenvolvida para apresentar os serviços da Trust Access de 
 
 ### 📋 Seções da Home Page
 
-- **Header Fixta-home-page.vercel.appta-home-page.vercel.appo**: Navegação intuitiva com logo e CTAs
+- **Header Fixo**: Navegação intuitiva com logo e CTAs
 - **Hero Section**: Apresentação impactante com padrão geométrico de fundo
 - **Seção de Confiança**: Logos de clientes (Vale, Hotmart, Ultimate)
 - **Serviços**: 3 seções principais com interfaces mockadas interativas
@@ -92,7 +92,7 @@ public/
 
 Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-## 📁 Estrutta-home-page.vercel.appura do Projeto
+## 📁 Estrutura do Projeto
 
 ```
 ta-home-page/
@@ -107,16 +107,16 @@ ta-home-page/
 ├── public/               # Arquivos estáticos
 │   └── images/           # Imagens e logos
 ├── package.json          # Dependências do projeto
-├── tailwind.config.js    # Configuração do Tailwind
+├── tailwind.config.ts    # Configuração do Tailwind
 ├── tsconfig.json         # Configuração do TypeScript
-└── next.config.js        # Configuração do Next.js
+└── next.config.mjs       # Configuração do Next.js
 ```
 
 ## 🎨 Customização
 
 ### Cores e Tema
 
-ta-home-page.vercel.appAs cores principais estão definidas no `tailwind.config.js`:
+As cores principais estão definidas no `tailwind.config.ts`:
 
 ```javascript
 // Gradiente principal: teal-500 to blue-600
@@ -135,7 +135,7 @@ Para personalizar o conteúdo, edite o arquivo `app/page.tsx`:
 
 ### Componentes
 
-Todos os comta-home-page.vercel.appponentes UI estão em `components/ui/` e podem ser customizados:
+Todos os componentes UI estão em `components/ui/` e podem ser customizados:
 
 ```bash
 # Adicionar novos componentes shadcn/ui
@@ -148,7 +148,7 @@ npx shadcn@latest add [component-name]
 
 ```bash
 # Instalar Vercel CLI
-npm i -g verta-home-page.vercel.appcel
+npm i -g vercel
 
 # Deploy
 vercel
@@ -170,7 +170,7 @@ FROM node:18-alpine
 WORKDIR /app
 COPY package*.json ./
 RUN npm install --legacy-peer-deps
-COPY . .ta-home-page.vercel.app
+COPY . .
 RUN npm run build
 EXPOSE 3000
 CMD ["npm", "start"]
@@ -220,7 +220,7 @@ npm run dev -- -p 3001
 ## 🤝 Contribuição
 
 1. Fork o projeto
-2. Crie uma ta-home-page.vercel.appbranch para sua feature (`git checkout -b feature/AmazingFeature`)
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
 3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
@@ -241,9 +241,8 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 <div align="center">
 
-**Desenvolvidta-home-page.vercel.appo com ❤️ para Trust Access**
+**Desenvolvido com ❤️ para Trust Access**
 
 _Especialistas em IAM e Segurança Digital_
 
 </div>
-```
