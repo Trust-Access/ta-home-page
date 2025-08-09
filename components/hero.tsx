@@ -1,6 +1,10 @@
+"use client";
+
 import { Button } from '@/components/ui/button';
+import { useI18n } from '@/lib/i18n';
 
 export default function Hero() {
+  const { t } = useI18n();
   return (
     <section className='relative py-20 md:py-32 overflow-hidden'>
       {/* Geometric Background Pattern */}
@@ -25,26 +29,26 @@ export default function Hero() {
       <div className='container relative px-4 md:px-6'>
         <div className='max-w-4xl'>
           <div className='space-y-8'>
-            <h1 className='text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-gray-900'>
-              IAM e Segurança como Serviço para{' '}
-              <span className='bg-gradient-to-r from-teal-500 to-blue-600 bg-clip-text text-transparent'>
-                Operações Seguras
-              </span>
-            </h1>
-            <p className='text-xl text-gray-600 max-w-3xl leading-relaxed'>
-              Capacitamos empresas com soluções completas de IAM e CIAM, unindo autenticação, governança e segurança de aplicações e APIs. Garantimos controle de acesso eficiente, com foco em proteção e boa experiência do usuário.
-            </p>
-            <p className='text-lg text-gray-700 max-w-3xl leading-relaxed'>
-              Oferecemos integrações, automação de onboarding/offboarding, suporte técnico e treinamentos. Operações mais seguras, ágeis e alinhadas com as exigências atuais de segurança digital.
-            </p>
-            <div className='pt-4'>
-              <Button
-                size='lg'
-                className='bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-lg px-8 py-6 rounded-full'
-              >
-                Agendar Demo
-              </Button>
-            </div>
+              <h1 className='text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-gray-900'>
+                {t('hero.title')}{' '}
+                <span className='bg-gradient-to-r from-teal-500 to-blue-600 bg-clip-text text-transparent'>
+                  {t('hero.highlight')}
+                </span>
+              </h1>
+              <p className='text-xl text-gray-600 max-w-3xl leading-relaxed'>
+                {t('hero.description1')}
+              </p>
+              <p className='text-lg text-gray-700 max-w-3xl leading-relaxed'>
+                {t('hero.description2')}
+              </p>
+              <div className='pt-4'>
+                <Button
+                  size='lg'
+                  className='bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-lg px-8 py-6 rounded-full'
+                >
+                  {t('hero.cta')}
+                </Button>
+              </div>
           </div>
         </div>
       </div>
