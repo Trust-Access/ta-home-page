@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/atoms/ui/card';
 import Image from 'next/image';
 import { clientCases } from '@/data/client-cases';
 

@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button';
-import { Checkbox } from '@/components/ui/checkbox';
+import { Button } from '@/components/atoms/ui/button';
+import { Checkbox } from '@/components/atoms/ui/checkbox';
 import Image from 'next/image';
 import { BLUR_PLACEHOLDER } from '@/lib/blur';
 

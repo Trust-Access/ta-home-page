@@ -1,11 +1,11 @@
 "use client";
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/atoms/ui/button';
 import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { navItems } from '@/data/navigation';
-import LanguageSwitcher from './language-switcher';
+import LanguageSwitcher from '../atoms/language-switcher';
 import { useI18n } from '@/lib/i18n';
 
 export default function Header() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Header from '@/components/header';
+import Header from '@/components/organisms/header';
 import { navItems } from '@/data/navigation';
 
 describe('Header', () => {
