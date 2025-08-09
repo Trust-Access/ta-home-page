@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from "react";
 
-export type Locale = 'en' | 'es' | 'pt';
+export type Locale = "en" | "es" | "pt";
 
 interface I18nContextProps {
   t: (key: string) => string;
@@ -12,33 +12,49 @@ interface I18nContextProps {
 
 const I18nContext = createContext<I18nContextProps>({
   t: (key: string) => key,
-  locale: 'pt',
+  locale: "pt",
   setLocale: () => {},
 });
 
-function getValue(dict: Record<string, unknown>, key: string): string | undefined {
+function getValue(
+  dict: Record<string, unknown>,
+  key: string,
+): string | undefined {
   return key
-    .split('.')
+    .split(".")
     .reduce(
       (acc: unknown, part) =>
-        acc && typeof acc === 'object' ? (acc as Record<string, unknown>)[part] : undefined,
+        acc && typeof acc === "object"
+          ? (acc as Record<string, unknown>)[part]
+          : undefined,
       dict,
     ) as string | undefined;
 }
 
-const loaders: Record<Locale, () => Promise<{ default: Record<string, unknown> }>> = {
-  en: () => import('./en.json'),
-  es: () => import('./es.json'),
-  pt: () => import('./pt.json'),
+const loaders: Record<
+  Locale,
+  () => Promise<{ default: Record<string, unknown> }>
+> = {
+  en: () => import("./en.json"),
+  es: () => import("./es.json"),
+  pt: () => import("./pt.json"),
 };
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>('pt');
+  const [locale, setLocale] = useState<Locale>("pt");
   const [dictionary, setDictionary] = useState<Record<string, unknown>>({});
+
+  useEffect(() => {
+    const storedLocale = localStorage.getItem("locale") as Locale | null;
+    if (storedLocale) {
+      setLocale(storedLocale);
+    }
+  }, []);
 
   useEffect(() => {
     loaders[locale]().then((module) => setDictionary(module.default));
     document.documentElement.lang = locale;
+    localStorage.setItem("locale", locale);
   }, [locale]);
 
   function t(key: string) {
