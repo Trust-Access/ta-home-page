@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import Image from 'next/image';
+import { BLUR_PLACEHOLDER } from '@/lib/blur';
 
 export default function ComplianceSection() {
   return (
@@ -15,6 +16,9 @@ export default function ComplianceSection() {
                 width={600}
                 height={400}
                 className='rounded-lg shadow-lg'
+                loading='lazy'
+                placeholder='blur'
+                blurDataURL={BLUR_PLACEHOLDER}
               />
               {/* Mock File Interface Overlay */}
               <div className='absolute top-12 right-8 bg-white rounded-lg shadow-xl p-4 w-64'>

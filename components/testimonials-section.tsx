@@ -41,6 +41,8 @@ export default function TestimonialsSection() {
                   width={500}
                   height={300}
                   className='rounded-lg shadow-lg w-full'
+                  loading='lazy'
+                  placeholder='blur'
                 />
               )}
             </div>

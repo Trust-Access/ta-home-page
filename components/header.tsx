@@ -15,6 +15,7 @@ export default function Header() {
             width={32}
             height={32}
             className='h-8 w-8'
+            loading='lazy'
           />
           <span className='text-2xl font-bold bg-gradient-to-r from-teal-500 to-blue-600 bg-clip-text text-transparent'>
             Trust Access
