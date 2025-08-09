@@ -1,8 +1,12 @@
+"use client";
+
 import { Globe, Linkedin, Mail } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useI18n } from '@/lib/i18n';
 
 export default function Footer() {
+  const { t } = useI18n();
   return (
     <footer className='bg-gray-900 text-white py-12'>
       <div className='container px-4 md:px-6'>
@@ -22,7 +26,7 @@ export default function Footer() {
               </span>
             </div>
             <p className='text-gray-400 max-w-xs'>
-              Especialistas em IAM e segurança digital. Implementamos soluções robustas de gestão de identidades e acessos.
+              {t('footer.tagline')}
             </p>
             <div className='flex space-x-4'>
               <Link href='#' className='text-gray-400 hover:text-white transition-colors'>
@@ -37,41 +41,41 @@ export default function Footer() {
             </div>
           </div>
           <div className='space-y-4'>
-            <h3 className='text-lg font-semibold'>Serviços</h3>
+            <h3 className='text-lg font-semibold'>{t('footer.services')}</h3>
             <div className='space-y-2'>
               <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
-                Implementação IAM
+                {t('footer.serviceItems.iamImplementation')}
               </Link>
               <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
-                Consultoria de Segurança
+                {t('footer.serviceItems.securityConsulting')}
               </Link>
               <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
-                Automação de Processos
+                {t('footer.serviceItems.processAutomation')}
               </Link>
               <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
-                Suporte Técnico
+                {t('footer.serviceItems.techSupport')}
               </Link>
             </div>
           </div>
           <div className='space-y-4'>
-            <h3 className='text-lg font-semibold'>Empresa</h3>
+            <h3 className='text-lg font-semibold'>{t('footer.company')}</h3>
             <div className='space-y-2'>
               <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
-                Sobre Nós
+                {t('footer.companyItems.about')}
               </Link>
               <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
-                Cases de Sucesso
+                {t('footer.companyItems.cases')}
               </Link>
               <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
-                Blog
+                {t('footer.companyItems.blog')}
               </Link>
               <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
-                Contato
+                {t('footer.companyItems.contact')}
               </Link>
             </div>
           </div>
           <div className='space-y-4'>
-            <h3 className='text-lg font-semibold'>Contato</h3>
+            <h3 className='text-lg font-semibold'>{t('footer.contact')}</h3>
             <div className='space-y-2 text-gray-400'>
               <div>www.trustaccess.com.br</div>
               <div>contato@trustaccess.com.br</div>
@@ -80,17 +84,17 @@ export default function Footer() {
         </div>
         <div className='border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center'>
           <p className='text-gray-400 text-sm'>
-            © {new Date().getFullYear()} Trust Access. Todos os direitos reservados.
+            © {new Date().getFullYear()} Trust Access. {t('footer.rights')}
           </p>
           <div className='flex space-x-6 mt-4 md:mt-0'>
             <Link href='#' className='text-gray-400 hover:text-white text-sm transition-colors'>
-              Política de Privacidade
+              {t('footer.privacy')}
             </Link>
             <Link href='#' className='text-gray-400 hover:text-white text-sm transition-colors'>
-              Termos de Serviço
+              {t('footer.terms')}
             </Link>
             <Link href='#' className='text-gray-400 hover:text-white text-sm transition-colors'>
-              LGPD
+              {t('footer.lgpd')}
             </Link>
           </div>
         </div>

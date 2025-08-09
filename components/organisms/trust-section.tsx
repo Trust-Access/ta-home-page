@@ -1,14 +1,19 @@
+"use client";
+
+import { useI18n } from '@/lib/i18n';
+
 export default function TrustSection() {
+  const { t } = useI18n();
   return (
     <section className='py-16 bg-gradient-to-r from-teal-50 to-blue-50'>
       <div className='container px-4 md:px-6'>
         <div className='text-center space-y-8'>
           <p className='text-lg font-medium text-gray-700 uppercase tracking-wide'>
-            Mais de{' '}
+            {t('trust.before')}{' '}
             <span className='font-bold text-2xl bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent'>
-              500+ EMPRESAS
+              {t('trust.highlight')}
             </span>{' '}
-            confiam na Trust Access para segurança e gestão de acesso.
+            {t('trust.after')}
           </p>
           <div className='grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60'>
             <div className='flex items-center justify-center'>

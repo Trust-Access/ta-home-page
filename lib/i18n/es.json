@@ -16,5 +16,80 @@
     "description1": "Capacitamos empresas con soluciones completas de IAM y CIAM, uniendo autenticación, gobernanza y seguridad de aplicaciones y API. Garantizamos control de acceso eficiente, enfocado en protección y una buena experiencia de usuario.",
     "description2": "Ofrecemos integraciones, automatización de onboarding/offboarding, soporte técnico y capacitaciones. Operaciones más seguras, ágiles y alineadas con las exigencias actuales de seguridad digital.",
     "cta": "Programar Demo"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "pt": "Portugués"
+  },
+  "common": {
+    "to": "Para",
+    "from": "De",
+    "protection": "Protección",
+    "on": "On",
+    "watermark": "Marca de agua",
+    "week": "Semana",
+    "month": "Mes"
+  },
+  "audit": {
+    "title": "Auditar y Controlar el Flujo de Datos Dentro y Fuera de su Organización",
+    "description": "Proteja los datos en movimiento, ya sea un correo entrante o un mensaje saliente, o una página de sistema interno. Con Trust Access, puede cambiar o revocar los permisos de acceso en cualquier momento.",
+    "imageAlt": "Auditoría y control de datos",
+    "emailAlt": "Vista previa del contenido del correo"
+  },
+  "compliance": {
+    "imageAlt": "Profesional trabajando en cumplimiento",
+    "reportTitle": "Informe Trimestral",
+    "open": "Abierto",
+    "openedByMe": "5:05 PM por mí",
+    "created": "Creado",
+    "createdWith": "5:05 PM con Trust Access para Drive",
+    "disableResharing": "Deshabilitar re-compartir",
+    "expirationNote": "Fecha de expiración (clic para restablecer)",
+    "revokeAccess": "Revocar Acceso de todos los Invitados",
+    "allowedUsers": "Usuarios Permitidos (3)",
+    "accessed": "Accedido hace 12 minutos",
+    "title": "Fortalecer Cumplimiento",
+    "description": "Ya sea en finanzas, manufactura, educación o salud, la encriptación y los controles de acceso de Trust Access respaldan incluso las regulaciones más rigurosas, incluyendo LGPD, GDPR, ISO 27001, SOC 2 y muchas otras."
+  },
+  "services": {
+    "intro": "Con Trust Access, puedes:",
+    "title": "Proteger Datos Sensibles Sin Limitar Tu Capacidad de Compartirlos",
+    "description": "Trust Access facilita añadir protección a correos electrónicos, archivos, adjuntos e incluso a los datos que fluyen a través de otras aplicaciones SaaS, sin necesidad de nuevas cuentas. Esta protección se extiende más allá del perímetro de tu organización para brindar control auditado incluso después de que los datos salen de tu red.",
+    "messageOptions": "OPCIONES DE MENSAJE",
+    "disableForwarding": "Deshabilitar Reenvío",
+    "expirationDate": "Fecha de Expiración",
+    "attachmentOptions": "OPCIONES DE ADJUNTO",
+    "persistentProtection": "Protección Persistente"
+  },
+  "trust": {
+    "before": "Más de",
+    "highlight": "500+ EMPRESAS",
+    "after": "confían en Trust Access para seguridad y gestión de acceso."
+  },
+  "clients": {
+    "heading": "Clientes reales. Éxitos reales. Comprobados."
+  },
+  "footer": {
+    "tagline": "Especialistas en IAM y seguridad digital. Implementamos soluciones robustas de gestión de identidades y accesos.",
+    "services": "Servicios",
+    "serviceItems": {
+      "iamImplementation": "Implementación IAM",
+      "securityConsulting": "Consultoría de Seguridad",
+      "processAutomation": "Automatización de Procesos",
+      "techSupport": "Soporte Técnico"
+    },
+    "company": "Empresa",
+    "companyItems": {
+      "about": "Sobre Nosotros",
+      "cases": "Casos de Éxito",
+      "blog": "Blog",
+      "contact": "Contacto"
+    },
+    "contact": "Contacto",
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "lgpd": "LGPD"
   }
 }
