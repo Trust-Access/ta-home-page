@@ -12,7 +12,7 @@ interface I18nContextProps {
 
 const I18nContext = createContext<I18nContextProps>({
   t: (key: string) => key,
-  locale: 'en',
+  locale: 'pt',
   setLocale: () => {},
 });
 
@@ -32,15 +32,8 @@ const loaders: Record<Locale, () => Promise<{ default: Record<string, unknown> }
   pt: () => import('./pt.json'),
 };
 
-export function I18nProvider({
-  children,
-  locale,
-  setLocale,
-}: {
-  children: React.ReactNode;
-  locale: Locale;
-  setLocale: (locale: Locale) => void;
-}) {
+export function I18nProvider({ children }: { children: React.ReactNode }) {
+  const [locale, setLocale] = useState<Locale>('pt');
   const [dictionary, setDictionary] = useState<Record<string, unknown>>({});
 
   useEffect(() => {

@@ -1,12 +1,9 @@
-"use client";
-
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/lib/config';
 import { QueryProvider } from '@/components/query-provider';
-import { I18nProvider, Locale } from '@/lib/i18n';
-import { useState } from 'react';
+import { I18nProvider } from '@/lib/i18n';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -72,17 +69,11 @@ export const viewport: Viewport = {
   themeColor: '#0A0A0A',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [locale, setLocale] = useState<Locale>('pt');
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={locale}>
+    <html lang='pt'>
       <body className={inter.className}>
-        <I18nProvider locale={locale} setLocale={setLocale}>
+        <I18nProvider>
           <QueryProvider>{children}</QueryProvider>
         </I18nProvider>
       </body>
