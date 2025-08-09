@@ -1,6 +1,12 @@
 "use client";
 
 import { Button } from '@/components/atoms/ui/button';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from '@/components/atoms/ui/sheet';
 import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -38,16 +44,45 @@ export default function Header() {
           ))}
         </nav>
         <div className='flex items-center space-x-4'>
-          <LanguageSwitcher />
-          <Button variant='ghost' className='hidden md:inline-flex'>
-            {t('header.login')}
-          </Button>
-          <Button className='bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700'>
-            {t('header.bookDemo')}
-          </Button>
-          <Button variant='ghost' size='icon' className='md:hidden'>
-            <Menu className='h-5 w-5' />
-          </Button>
+          <div className='hidden md:flex items-center space-x-4'>
+            <LanguageSwitcher />
+            <Button variant='ghost'>{t('header.login')}</Button>
+            <Button className='bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700'>
+              {t('header.bookDemo')}
+            </Button>
+          </div>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant='ghost' size='icon' className='md:hidden'>
+                <Menu className='h-5 w-5' />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side='right' className='flex flex-col space-y-6 p-6'>
+              <nav className='flex flex-col space-y-4'>
+                {navItems.map(({ href, label }) => (
+                  <SheetClose asChild key={href}>
+                    <Link
+                      href={href}
+                      className='text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors'
+                    >
+                      {t(label)}
+                    </Link>
+                  </SheetClose>
+                ))}
+              </nav>
+              <LanguageSwitcher />
+              <SheetClose asChild>
+                <Button variant='ghost' className='w-full'>
+                  {t('header.login')}
+                </Button>
+              </SheetClose>
+              <SheetClose asChild>
+                <Button className='w-full bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700'>
+                  {t('header.bookDemo')}
+                </Button>
+              </SheetClose>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
