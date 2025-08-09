@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/atoms/ui/card';
 import { Checkbox } from '@/components/atoms/ui/checkbox';
 import { Input } from '@/components/atoms/ui/input';
@@ -16,7 +18,7 @@ import { z } from 'zod';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-const DemoFormSchema = z.object({
+export const DemoFormSchema = z.object({
   firstName: z.string().min(1, 'Required'),
   lastName: z.string().min(1, 'Required'),
   email: z.string().email('Invalid email'),
@@ -26,9 +28,9 @@ const DemoFormSchema = z.object({
   country: z.string().min(1, 'Required'),
   message: z.string().optional(),
   source: z.string().min(1, 'Required'),
-  terms: z.literal(true, {
-    errorMap: () => ({ message: 'You must agree to the terms' }),
-  }),
+  terms: z
+    .boolean()
+    .refine((val) => val, { message: 'You must agree to the terms' }),
 });
 
 type DemoFormValues = z.infer<typeof DemoFormSchema>;
