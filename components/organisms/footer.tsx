@@ -25,17 +25,17 @@ export default function Footer() {
                 Trust Access
               </span>
             </div>
-            <p className='text-gray-400 max-w-xs'>
+            <p className='text-muted-foreground max-w-xs'>
               {t('footer.tagline')}
             </p>
             <div className='flex space-x-4'>
-              <Link href='#' className='text-gray-400 hover:text-white transition-colors'>
-                <Linkedin className='h-5 w-5' />
+              <Link href='#' className='text-muted-foreground hover:text-white transition-colors'>
+              <Linkedin className='h-5 w-5' />
               </Link>
-              <Link href='#' className='text-gray-400 hover:text-white transition-colors'>
+              <Link href='#' className='text-muted-foreground hover:text-white transition-colors'>
                 <Mail className='h-5 w-5' />
               </Link>
-              <Link href='#' className='text-gray-400 hover:text-white transition-colors'>
+              <Link href='#' className='text-muted-foreground hover:text-white transition-colors'>
                 <Globe className='h-5 w-5' />
               </Link>
             </div>
@@ -43,16 +43,16 @@ export default function Footer() {
           <div className='space-y-4'>
             <h3 className='text-lg font-semibold'>{t('footer.services')}</h3>
             <div className='space-y-2'>
-              <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
+              <Link href='#' className='block text-muted-foreground hover:text-white transition-colors'>
                 {t('footer.serviceItems.iamImplementation')}
               </Link>
-              <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
+              <Link href='#' className='block text-muted-foreground hover:text-white transition-colors'>
                 {t('footer.serviceItems.securityConsulting')}
               </Link>
-              <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
+              <Link href='#' className='block text-muted-foreground hover:text-white transition-colors'>
                 {t('footer.serviceItems.processAutomation')}
               </Link>
-              <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
+              <Link href='#' className='block text-muted-foreground hover:text-white transition-colors'>
                 {t('footer.serviceItems.techSupport')}
               </Link>
             </div>
@@ -60,40 +60,40 @@ export default function Footer() {
           <div className='space-y-4'>
             <h3 className='text-lg font-semibold'>{t('footer.company')}</h3>
             <div className='space-y-2'>
-              <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
+              <Link href='#' className='block text-muted-foreground hover:text-white transition-colors'>
                 {t('footer.companyItems.about')}
               </Link>
-              <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
+              <Link href='#' className='block text-muted-foreground hover:text-white transition-colors'>
                 {t('footer.companyItems.cases')}
               </Link>
-              <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
+              <Link href='#' className='block text-muted-foreground hover:text-white transition-colors'>
                 {t('footer.companyItems.blog')}
               </Link>
-              <Link href='#' className='block text-gray-400 hover:text-white transition-colors'>
+              <Link href='#' className='block text-muted-foreground hover:text-white transition-colors'>
                 {t('footer.companyItems.contact')}
               </Link>
             </div>
           </div>
           <div className='space-y-4'>
             <h3 className='text-lg font-semibold'>{t('footer.contact')}</h3>
-            <div className='space-y-2 text-gray-400'>
+            <div className='space-y-2 text-muted-foreground'>
               <div>www.trustaccess.com.br</div>
               <div>contato@trustaccess.com.br</div>
             </div>
           </div>
         </div>
-        <div className='border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center'>
-          <p className='text-gray-400 text-sm'>
+        <div className='border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center'>
+          <p className='text-muted-foreground text-sm'>
             © {new Date().getFullYear()} Trust Access. {t('footer.rights')}
           </p>
           <div className='flex space-x-6 mt-4 md:mt-0'>
-            <Link href='#' className='text-gray-400 hover:text-white text-sm transition-colors'>
+            <Link href='#' className='text-muted-foreground hover:text-white text-sm transition-colors'>
               {t('footer.privacy')}
             </Link>
-            <Link href='#' className='text-gray-400 hover:text-white text-sm transition-colors'>
+            <Link href='#' className='text-muted-foreground hover:text-white text-sm transition-colors'>
               {t('footer.terms')}
             </Link>
-            <Link href='#' className='text-gray-400 hover:text-white text-sm transition-colors'>
+            <Link href='#' className='text-muted-foreground hover:text-white text-sm transition-colors'>
               {t('footer.lgpd')}
             </Link>
           </div>

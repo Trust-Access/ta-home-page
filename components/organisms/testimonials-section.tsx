@@ -6,22 +6,22 @@ import { testimonials } from '@/data/testimonials';
 export default function TestimonialsSection() {
   const [primary, secondary] = testimonials;
   return (
-    <section id='cases' className='py-20 md:py-32 bg-gray-50'>
+    <section id='cases' className='py-20 md:py-32 bg-background'>
       <div className='container px-4 md:px-6'>
         <div className='grid gap-12 lg:grid-cols-2'>
-          <Card className='border-0 shadow-lg bg-white'>
+          <Card className='border-0 shadow-lg bg-card'>
             <CardContent className='p-8'>
               <div className='space-y-6'>
-                <div className='text-2xl font-bold text-gray-400 tracking-wider'>
+                <div className='text-2xl font-bold text-muted-foreground tracking-wider'>
                   {primary.company}
                 </div>
-                <blockquote className='text-lg text-gray-700 leading-relaxed'>
+                <blockquote className='text-lg text-muted-foreground leading-relaxed'>
                   {primary.quote}
                 </blockquote>
                 <div className='pt-4'>
-                  <div className='font-semibold text-gray-900'>{primary.name}</div>
-                  <div className='text-gray-600'>{primary.role}</div>
-                  <div className='text-gray-500'>{primary.companyTag}</div>
+                  <div className='font-semibold text-foreground'>{primary.name}</div>
+                  <div className='text-muted-foreground'>{primary.role}</div>
+                  <div className='text-muted-foreground'>{primary.companyTag}</div>
                 </div>
                 <Link
                   href={primary.link}
@@ -46,20 +46,20 @@ export default function TestimonialsSection() {
                 />
               )}
             </div>
-            <Card className='border-0 shadow-lg bg-white'>
+            <Card className='border-0 shadow-lg bg-card'>
               <CardContent className='p-6'>
                 <div className='space-y-4'>
                   <div className='flex items-center space-x-3'>
                     <div className='text-xl font-bold text-blue-600'>{secondary.company}</div>
                   </div>
                   {secondary.heading && (
-                    <h4 className='text-lg font-semibold text-gray-900'>{secondary.heading}</h4>
+                    <h4 className='text-lg font-semibold text-foreground'>{secondary.heading}</h4>
                   )}
-                  <blockquote className='text-gray-700'>{secondary.quote}</blockquote>
+                  <blockquote className='text-muted-foreground'>{secondary.quote}</blockquote>
                   <div className='pt-2'>
-                    <div className='font-semibold text-gray-900'>{secondary.name}</div>
-                    <div className='text-gray-600'>{secondary.role}</div>
-                    <div className='text-gray-500'>{secondary.companyTag}</div>
+                    <div className='font-semibold text-foreground'>{secondary.name}</div>
+                    <div className='text-muted-foreground'>{secondary.role}</div>
+                    <div className='text-muted-foreground'>{secondary.companyTag}</div>
                   </div>
                   <Link
                     href={secondary.link}

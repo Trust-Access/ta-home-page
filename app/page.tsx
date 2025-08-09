@@ -15,7 +15,7 @@ const Footer = dynamic(() => import('@/components/organisms/footer'));
 
 export default function TrustAccessLanding() {
   return (
-    <div className='min-h-screen bg-white'>
+    <div className='min-h-screen bg-background'>
       <Suspense fallback={<Skeleton className='h-16 w-full' />}>
         <Header />
       </Suspense>

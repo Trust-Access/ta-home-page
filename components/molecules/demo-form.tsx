@@ -51,7 +51,7 @@ export default function DemoForm() {
   };
 
   return (
-    <section id='contact' className='py-20 md:py-32 bg-white'>
+    <section id='contact' className='py-20 md:py-32 bg-background'>
       <div className='container px-4 md:px-6'>
         <div className='max-w-2xl mx-auto'>
           <Card className='border-0 shadow-xl'>
@@ -181,7 +181,7 @@ export default function DemoForm() {
                   )}
                 </div>
                 <div className='space-y-4'>
-                  <div className='text-sm text-gray-600'>
+                  <div className='text-sm text-muted-foreground'>
                     Ao completar este formulário, você concorda em receber comunicações de marketing da Trust Access. Você pode cancelar a inscrição a qualquer momento. Consulte nossa{' '}
                     <Link href='#' className='text-blue-600 hover:underline'>
                       Política de Privacidade
