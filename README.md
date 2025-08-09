@@ -38,6 +38,7 @@ Esta home page foi desenvolvida para apresentar os serviços da Trust Access de 
 - **Formulários Validados**: Validação client-side completa
 - **Imagens Otimizadas**: Next.js Image component para performance
 - **TypeScript**: Tipagem completa para maior confiabilidade
+- **React Query**: Gerenciamento de dados e cache assíncrono
 
 ## 🛠️ Stack Tecnológica
 
@@ -50,6 +51,7 @@ Esta home page foi desenvolvida para apresentar os serviços da Trust Access de 
 | **shadcn/ui**    | Latest | Componentes UI acessíveis e customizáveis |
 | **Lucide React** | Latest | Biblioteca de ícones moderna              |
 | **Radix UI**     | Latest | Primitivos UI headless                    |
+| **React Query**  | Latest | Gerenciamento de dados assíncronos       |
 
 ## 📦 Instalação e Configuração
 
@@ -101,8 +103,11 @@ ta-home-page/
 │   ├── layout.tsx         # Layout principal
 │   └── page.tsx           # Página principal
 ├── components/            # Componentes reutilizáveis
+│   ├── query-provider.tsx # Provedor do React Query
 │   └── ui/               # Componentes shadcn/ui
 ├── lib/                  # Utilitários e configurações
+│   ├── api/              # Configurações de API
+│   │   └── queryClient.ts # Cliente do React Query
 │   └── utils.ts          # Funções auxiliares
 ├── public/               # Arquivos estáticos
 │   └── images/           # Imagens e logos
@@ -140,6 +145,29 @@ Todos os componentes UI estão em `components/ui/` e podem ser customizados:
 ```bash
 # Adicionar novos componentes shadcn/ui
 npx shadcn@latest add [component-name]
+```
+
+## 🔄 React Query
+
+A biblioteca **React Query** está configurada globalmente para facilitar o consumo de APIs e o cache de dados.
+
+- O `QueryClient` está definido em `lib/api/queryClient.ts`.
+- O componente `QueryProvider` envolve a aplicação em `app/layout.tsx`.
+
+Exemplo de uso:
+
+```tsx
+import { useQuery } from '@tanstack/react-query';
+
+function Example() {
+  const { data, isLoading } = useQuery({
+    queryKey: ['usuarios'],
+    queryFn: () => fetch('/api/users').then((res) => res.json()),
+  });
+
+  if (isLoading) return <span>Carregando...</span>;
+  return <pre>{JSON.stringify(data)}</pre>;
+}
 ```
 
 ## 🚀 Deploy
