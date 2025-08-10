@@ -25,7 +25,7 @@ Esta home page foi desenvolvida para apresentar os serviços da Trust Access de 
 
 - **Header Fixo**: Navegação intuitiva com logo e CTAs
 - **Hero Section**: Apresentação impactante com padrão geométrico de fundo
-- **Seção de Confiança**: Logos de clientes (Vale, Hotmart, Ultimate)
+- **Seção de Confiança**: Logos de clientes
 - **Serviços**: 3 seções principais com interfaces mockadas interativas
 - **Cases de Sucesso**: Depoimentos reais de clientes
 - **Formulário de Demo**: Formulário completo para captação de leads
