@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import ModeToggle from "@/components/atoms/ui/mode-toggle";
+import ModeToggle from "@/components/atoms/mode-toggle";
 import { ThemeProvider } from "@/components/templates/theme-provider";
 import { vi } from "vitest";
 
