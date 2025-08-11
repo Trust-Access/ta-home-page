@@ -79,12 +79,13 @@ export const viewport: Viewport = {
   themeColor: "#0A0A0A",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const locale = cookies().get("NEXT_LOCALE")?.value || "pt";
+  const cookieStore = await cookies();
+  const locale = cookieStore.get("NEXT_LOCALE")?.value || "pt";
   return (
     <html lang={locale}>
       <body className={inter.className}>
