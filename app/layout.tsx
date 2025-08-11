@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/config";
 import { QueryProvider } from "@/components/templates/query-provider";
 import { I18nProvider } from "@/lib/i18n";
 import { ThemeProvider } from "@/components/templates/theme-provider";
+import { cookies } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,14 @@ export const metadata: Metadata = {
     siteConfig.name,
   ],
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: "/",
+    languages: {
+      en: "/en",
+      es: "/es",
+      pt: "/",
+    },
+  },
   openGraph: {
     title: `${siteConfig.name} | Identity & Access Management`,
     description:
@@ -75,8 +84,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const locale = cookies().get("NEXT_LOCALE")?.value || "pt";
   return (
-    <html lang="pt">
+    <html lang={locale}>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <I18nProvider>
