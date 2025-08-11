@@ -86,8 +86,42 @@ export default async function RootLayout({
 }) {
   const cookieStore = await cookies();
   const locale = cookieStore.get("NEXT_LOCALE")?.value || "pt";
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/placeholder-logo.svg`,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        email: "contato@trustaccess.com.br",
+        contactType: "customer service",
+      },
+    ],
+  };
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    url: siteConfig.url,
+    name: siteConfig.name,
+  };
   return (
     <html lang={locale}>
+      <head>
+        <script
+          id="organization-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
+        <script
+          id="website-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <I18nProvider>
