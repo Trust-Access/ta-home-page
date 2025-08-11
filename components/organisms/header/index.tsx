@@ -11,8 +11,8 @@ import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { navItems } from "@/data/navigation";
-import LanguageSwitcher from "../atoms/language-switcher";
-import ModeToggle from "../atoms/ui/mode-toggle";
+import LanguageSwitcher from "@/components/atoms/language-switcher";
+import ModeToggle from "@/components/atoms/mode-toggle";
 import { useI18n } from "@/lib/i18n";
 
 export default function Header() {
