@@ -15,5 +15,8 @@ export default defineConfig({
     setupFiles: './vitest.setup.ts',
     globals: true,
     include: ['stories/**/*.{test,spec}.tsx'],
+    coverage: {
+      provider: 'v8',
+    },
   },
 });
