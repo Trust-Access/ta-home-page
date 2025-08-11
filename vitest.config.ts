@@ -17,6 +17,12 @@ export default defineConfig({
     include: ['**/*.{test,spec}.tsx'],
     coverage: {
       provider: 'v8',
+      thresholds: {
+        statements: 0.8,
+        branches: 0.8,
+        functions: 0.8,
+        lines: 0.8,
+      },
     },
   },
 });
