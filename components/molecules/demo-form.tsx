@@ -14,41 +14,12 @@ import {
 import { Textarea } from '@/components/atoms/ui/textarea';
 import { Button } from '@/components/atoms/ui/button';
 import Link from 'next/link';
-import { z } from 'zod';
-import { useForm, Controller } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-
-export const DemoFormSchema = z.object({
-  firstName: z.string().min(1, 'Required'),
-  lastName: z.string().min(1, 'Required'),
-  email: z.string().email('Invalid email'),
-  phone: z.string().min(1, 'Required'),
-  company: z.string().min(1, 'Required'),
-  employees: z.string().min(1, 'Required'),
-  country: z.string().min(1, 'Required'),
-  message: z.string().optional(),
-  source: z.string().min(1, 'Required'),
-  terms: z
-    .boolean()
-    .refine((val) => val, { message: 'You must agree to the terms' }),
-});
-
-type DemoFormValues = z.infer<typeof DemoFormSchema>;
+import { useFormState } from 'react-dom';
+import { submitDemo, type DemoFormState } from '@/app/actions/submitDemo';
 
 export default function DemoForm() {
-  const {
-    register,
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<DemoFormValues>({
-    resolver: zodResolver(DemoFormSchema),
-    defaultValues: { terms: false },
-  });
-
-  const onSubmit = (data: DemoFormValues) => {
-    console.log(data);
-  };
+  const initialState: DemoFormState = { errors: {} };
+  const [state, formAction] = useFormState(submitDemo, initialState);
 
   return (
     <section id='contact' className='py-20 md:py-32 bg-background'>
@@ -61,20 +32,20 @@ export default function DemoForm() {
               </CardTitle>
             </CardHeader>
             <CardContent className='px-8 pb-8'>
-              <form className='space-y-6' onSubmit={handleSubmit(onSubmit)}>
+              <form className='space-y-6'>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                   <div className='space-y-2'>
                     <Label htmlFor='firstName'>Nome*</Label>
-                    <Input id='firstName' placeholder='Nome' required {...register('firstName')} />
-                    {errors.firstName && (
-                      <p className='text-sm text-red-500'>{errors.firstName.message}</p>
+                    <Input id='firstName' name='firstName' placeholder='Nome' required />
+                    {state.errors?.firstName && (
+                      <p className='text-sm text-red-500'>{state.errors.firstName[0]}</p>
                     )}
                   </div>
                   <div className='space-y-2'>
                     <Label htmlFor='lastName'>Sobrenome*</Label>
-                    <Input id='lastName' placeholder='Sobrenome' required {...register('lastName')} />
-                    {errors.lastName && (
-                      <p className='text-sm text-red-500'>{errors.lastName.message}</p>
+                    <Input id='lastName' name='lastName' placeholder='Sobrenome' required />
+                    {state.errors?.lastName && (
+                      <p className='text-sm text-red-500'>{state.errors.lastName[0]}</p>
                     )}
                   </div>
                 </div>
@@ -86,26 +57,26 @@ export default function DemoForm() {
                       type='email'
                       placeholder='E-mail Corporativo'
                       required
-                      {...register('email')}
+                      name='email'
                     />
-                    {errors.email && (
-                      <p className='text-sm text-red-500'>{errors.email.message}</p>
+                    {state.errors?.email && (
+                      <p className='text-sm text-red-500'>{state.errors.email[0]}</p>
                     )}
                   </div>
                   <div className='space-y-2'>
                     <Label htmlFor='phone'>Telefone*</Label>
-                    <Input id='phone' placeholder='Telefone' required {...register('phone')} />
-                    {errors.phone && (
-                      <p className='text-sm text-red-500'>{errors.phone.message}</p>
+                    <Input id='phone' name='phone' placeholder='Telefone' required />
+                    {state.errors?.phone && (
+                      <p className='text-sm text-red-500'>{state.errors.phone[0]}</p>
                     )}
                   </div>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                   <div className='space-y-2'>
                     <Label htmlFor='company'>Empresa*</Label>
-                    <Input id='company' placeholder='Empresa' required {...register('company')} />
-                    {errors.company && (
-                      <p className='text-sm text-red-500'>{errors.company.message}</p>
+                    <Input id='company' name='company' placeholder='Empresa' required />
+                    {state.errors?.company && (
+                      <p className='text-sm text-red-500'>{state.errors.company[0]}</p>
                     )}
                   </div>
                   <div className='space-y-2'>
@@ -114,34 +85,28 @@ export default function DemoForm() {
                       id='employees'
                       placeholder='Número de Funcionários'
                       required
-                      {...register('employees')}
+                      name='employees'
                     />
-                    {errors.employees && (
-                      <p className='text-sm text-red-500'>{errors.employees.message}</p>
+                    {state.errors?.employees && (
+                      <p className='text-sm text-red-500'>{state.errors.employees[0]}</p>
                     )}
                   </div>
                 </div>
                 <div className='space-y-2'>
                   <Label htmlFor='country'>País*</Label>
-                  <Controller
-                    name='country'
-                    control={control}
-                    render={({ field }) => (
-                      <Select onValueChange={field.onChange} value={field.value}>
-                        <SelectTrigger>
-                          <SelectValue placeholder='País' />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value='br'>Brasil</SelectItem>
-                          <SelectItem value='us'>Estados Unidos</SelectItem>
-                          <SelectItem value='ca'>Canadá</SelectItem>
-                          <SelectItem value='mx'>México</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    )}
-                  />
-                  {errors.country && (
-                    <p className='text-sm text-red-500'>{errors.country.message}</p>
+                  <Select name='country'>
+                    <SelectTrigger>
+                      <SelectValue placeholder='País' />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value='br'>Brasil</SelectItem>
+                      <SelectItem value='us'>Estados Unidos</SelectItem>
+                      <SelectItem value='ca'>Canadá</SelectItem>
+                      <SelectItem value='mx'>México</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  {state.errors?.country && (
+                    <p className='text-sm text-red-500'>{state.errors.country[0]}</p>
                   )}
                 </div>
                 <div className='space-y-2'>
@@ -150,34 +115,28 @@ export default function DemoForm() {
                     id='message'
                     placeholder='Descreva suas necessidades de segurança e gestão de acesso...'
                     rows={4}
-                    {...register('message')}
+                    name='message'
                   />
-                  {errors.message && (
-                    <p className='text-sm text-red-500'>{errors.message.message}</p>
+                  {state.errors?.message && (
+                    <p className='text-sm text-red-500'>{state.errors.message[0]}</p>
                   )}
                 </div>
                 <div className='space-y-2'>
                   <Label htmlFor='source'>Como você soube sobre nós?*</Label>
-                  <Controller
-                    name='source'
-                    control={control}
-                    render={({ field }) => (
-                      <Select onValueChange={field.onChange} value={field.value}>
-                        <SelectTrigger>
-                          <SelectValue placeholder='Selecione uma opção' />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value='google'>Google</SelectItem>
-                          <SelectItem value='linkedin'>LinkedIn</SelectItem>
-                          <SelectItem value='referral'>Indicação</SelectItem>
-                          <SelectItem value='event'>Evento</SelectItem>
-                          <SelectItem value='other'>Outro</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    )}
-                  />
-                  {errors.source && (
-                    <p className='text-sm text-red-500'>{errors.source.message}</p>
+                  <Select name='source'>
+                    <SelectTrigger>
+                      <SelectValue placeholder='Selecione uma opção' />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value='google'>Google</SelectItem>
+                      <SelectItem value='linkedin'>LinkedIn</SelectItem>
+                      <SelectItem value='referral'>Indicação</SelectItem>
+                      <SelectItem value='event'>Evento</SelectItem>
+                      <SelectItem value='other'>Outro</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  {state.errors?.source && (
+                    <p className='text-sm text-red-500'>{state.errors.source[0]}</p>
                   )}
                 </div>
                 <div className='space-y-4'>
@@ -189,28 +148,18 @@ export default function DemoForm() {
                     .
                   </div>
                   <div className='flex items-center space-x-2'>
-                    <Controller
-                      name='terms'
-                      control={control}
-                      render={({ field }) => (
-                        <Checkbox
-                          id='terms'
-                          required
-                          checked={field.value}
-                          onCheckedChange={field.onChange}
-                        />
-                      )}
-                    />
+                    <Checkbox id='terms' name='terms' required />
                     <Label htmlFor='terms' className='text-sm'>
                       Eu concordo com os termos e condições*
                     </Label>
                   </div>
-                  {errors.terms && (
-                    <p className='text-sm text-red-500'>{errors.terms.message}</p>
+                  {state.errors?.terms && (
+                    <p className='text-sm text-red-500'>{state.errors.terms[0]}</p>
                   )}
                 </div>
                 <Button
                   type='submit'
+                  formAction={formAction}
                   className='w-full bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-lg py-6'
                 >
                   Enviar
