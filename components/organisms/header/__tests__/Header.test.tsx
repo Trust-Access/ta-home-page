@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from '@/components/organisms/header';
 import { navItems } from '@/data/navigation';
 import { render, screen } from '@/test/test-utils';
