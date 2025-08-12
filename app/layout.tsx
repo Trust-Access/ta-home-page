@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { siteConfig } from "@/lib/config";
 import RootLayoutBase from "./root-layout-base";
@@ -74,5 +75,23 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <RootLayoutBase>{children}</RootLayoutBase>;
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
+
+  return (
+    <RootLayoutBase>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="ga-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);} 
+          gtag('js', new Date());
+          gtag('config', '${GA_MEASUREMENT_ID}');
+        `}
+      </Script>
+      {children}
+    </RootLayoutBase>
+  );
 }
