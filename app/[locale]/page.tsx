@@ -1,4 +1,3 @@
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import HomePage from "../page";
 
@@ -14,9 +13,5 @@ export default async function LocalePage({ params }: LocaleParams) {
   if (!supportedLocales.includes(locale)) {
     redirect("/");
   }
-
-  const cookieStore = await cookies();
-  cookieStore.set("NEXT_LOCALE", locale);
-
   return <HomePage />;
 }
