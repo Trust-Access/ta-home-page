@@ -32,7 +32,7 @@ export default async function Header() {
             width={32}
             height={32}
             className="h-8 w-8"
-            loading="lazy"
+            priority
           />
           <span className="bg-gradient-to-r from-teal-500 to-blue-600 bg-clip-text text-2xl font-bold text-transparent">
             Trust Access
