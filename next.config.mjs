@@ -18,6 +18,9 @@ const nextConfig = {
   i18n: {
     locales: ['en', 'es', 'pt'],
     defaultLocale: 'pt',
+    // Disable automatic locale detection to prevent redirects to
+    // unsupported language routes like "/en" that result in 404s.
+    localeDetection: false,
   },
 }
 
