@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://example.com",
+  siteUrl: "https://www.trustaccess.com.br",
   generateRobotsTxt: true,
   outDir: "public",
 };
