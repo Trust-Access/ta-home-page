@@ -1,6 +1,7 @@
 "use client";
 
 import { Locale, useI18n } from "@/lib/i18n";
+import { useRouter } from "next/navigation";
 import {
   Select,
   SelectTrigger,
@@ -18,6 +19,7 @@ export default function LanguageSwitcher({
   className,
 }: LanguageSwitcherProps) {
   const { t, locale, setLocale } = useI18n();
+  const router = useRouter();
   const languages: { value: Locale; label: string; flag: string }[] = [
     { value: "en", label: t("languages.en"), flag: "🇺🇸" },
     { value: "es", label: t("languages.es"), flag: "🇪🇸" },
@@ -25,7 +27,13 @@ export default function LanguageSwitcher({
   ];
 
   return (
-    <Select value={locale} onValueChange={(v) => setLocale(v as Locale)}>
+    <Select
+      value={locale}
+      onValueChange={(v) => {
+        setLocale(v as Locale);
+        router.push(`/${v}`);
+      }}
+    >
       <SelectTrigger className={cn("w-full md:w-[120px]", className)}>
         <SelectValue />
       </SelectTrigger>
