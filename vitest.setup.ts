@@ -11,6 +11,8 @@ vi.mock("next/navigation", () => ({
   usePathname: () => currentPath,
 }));
 
+vi.mock('server-only', () => ({}));
+
 beforeEach(() => {
   routerPush.mockClear();
   currentPath = "/pt";

@@ -1,13 +1,11 @@
-"use client";
-
 import { Button } from '@/components/atoms/ui/button';
 import { Checkbox } from '@/components/atoms/ui/checkbox';
 import Image from 'next/image';
 import { BLUR_PLACEHOLDER } from '@/lib/blur';
-import { useI18n } from '@/lib/i18n';
+import { getCurrentLocale, getTranslator } from '@/lib/i18n';
 
-export default function ComplianceSection() {
-  const { t } = useI18n();
+export default async function ComplianceSection() {
+  const t = await getTranslator(getCurrentLocale());
   return (
     <section className='py-20 md:py-32 bg-background'>
       <div className='container px-4 md:px-6'>

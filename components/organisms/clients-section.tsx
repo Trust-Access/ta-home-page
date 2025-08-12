@@ -1,12 +1,10 @@
-"use client";
-
 import { Card, CardContent } from '@/components/atoms/ui/card';
 import Image from 'next/image';
 import { clientCases } from '@/data/client-cases';
-import { useI18n } from '@/lib/i18n';
+import { getCurrentLocale, getTranslator } from '@/lib/i18n';
 
-export default function ClientsSection() {
-  const { t } = useI18n();
+export default async function ClientsSection() {
+  const t = await getTranslator(getCurrentLocale());
   return (
     <section className='py-20 md:py-32 bg-background'>
       <div className='container max-w-screen-xl mx-auto px-4 md:px-6'>

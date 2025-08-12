@@ -1,15 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import LanguageSwitcher from '@/components/atoms/language-switcher';
-import { I18nProvider } from '@/lib/i18n';
 
 const meta: Meta<typeof LanguageSwitcher> = {
   title: 'Atoms/LanguageSwitcher',
   component: LanguageSwitcher,
-  decorators: [(Story) => (
-    <I18nProvider>
-      <Story />
-    </I18nProvider>
-  )],
+  args: {
+    locale: 'pt',
+    languages: [
+      { value: 'en', label: 'English', flag: '🇺🇸' },
+      { value: 'es', label: 'Español', flag: '🇪🇸' },
+      { value: 'pt', label: 'Português', flag: '🇧🇷' },
+    ],
+  },
 };
 
 export default meta;

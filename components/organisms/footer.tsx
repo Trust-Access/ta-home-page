@@ -1,12 +1,10 @@
-"use client";
-
 import { Globe, Linkedin, Mail } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useI18n } from '@/lib/i18n';
+import { getCurrentLocale, getTranslator } from '@/lib/i18n';
 
-export default function Footer() {
-  const { t } = useI18n();
+export default async function Footer() {
+  const t = await getTranslator(getCurrentLocale());
   return (
     <footer className='bg-gray-900 text-white py-12'>
       <div className='container px-4 md:px-6'>

@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/atoms/ui/button";
 import {
   Sheet,
@@ -13,10 +11,16 @@ import Link from "next/link";
 import { navItems } from "@/data/navigation";
 import LanguageSwitcher from "@/components/atoms/language-switcher";
 import ModeToggle from "@/components/atoms/mode-toggle";
-import { useI18n } from "@/lib/i18n";
+import { getCurrentLocale, getTranslator } from "@/lib/i18n";
 
-export default function Header() {
-  const { t } = useI18n();
+export default async function Header() {
+  const locale = getCurrentLocale();
+  const t = await getTranslator(locale);
+  const languages = [
+    { value: "en", label: t("languages.en"), flag: "🇺🇸" },
+    { value: "es", label: t("languages.es"), flag: "🇪🇸" },
+    { value: "pt", label: t("languages.pt"), flag: "🇧🇷" },
+  ];
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
@@ -46,7 +50,7 @@ export default function Header() {
         </nav>
         <div className="flex items-center space-x-4">
           <div className="hidden items-center space-x-4 md:flex">
-            <LanguageSwitcher />
+            <LanguageSwitcher locale={locale} languages={languages} />
             <ModeToggle />
             <Button variant="ghost">{t("header.login")}</Button>
             <Button className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700">
@@ -72,7 +76,7 @@ export default function Header() {
                   </SheetClose>
                 ))}
               </nav>
-              <LanguageSwitcher />
+              <LanguageSwitcher locale={locale} languages={languages} />
               <ModeToggle />
               <SheetClose asChild>
                 <Button variant="ghost" className="w-full">

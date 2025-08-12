@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/config";
 import { QueryProvider } from "@/components/templates/query-provider";
-import { I18nProvider } from "@/lib/i18n";
 import { ThemeProvider } from "@/components/templates/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -125,9 +124,7 @@ export function RootLayoutBase({
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <I18nProvider>
-            <QueryProvider>{children}</QueryProvider>
-          </I18nProvider>
+          <QueryProvider>{children}</QueryProvider>
         </ThemeProvider>
       </body>
     </html>
