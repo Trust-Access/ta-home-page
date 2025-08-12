@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export type Locale = "en" | "es" | "pt";
 
@@ -40,16 +41,24 @@ const loaders: Record<
   pt: () => import("./pt.json"),
 };
 
+const SUPPORTED_LOCALES: Locale[] = ["en", "es", "pt"];
+
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("pt");
+  const pathname = usePathname();
+  const pathLocale = pathname?.split("/")[1];
+  const [locale, setLocale] = useState<Locale>(
+    SUPPORTED_LOCALES.includes(pathLocale as Locale)
+      ? (pathLocale as Locale)
+      : "pt",
+  );
   const [dictionary, setDictionary] = useState<Record<string, unknown>>({});
 
   useEffect(() => {
-    const storedLocale = localStorage.getItem("locale") as Locale | null;
-    if (storedLocale) {
-      setLocale(storedLocale);
+    const current = pathname?.split("/")[1];
+    if (SUPPORTED_LOCALES.includes(current as Locale) && current !== locale) {
+      setLocale(current as Locale);
     }
-  }, []);
+  }, [pathname, locale]);
 
   useEffect(() => {
     loaders[locale]().then((module) => setDictionary(module.default));
