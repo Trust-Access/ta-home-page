@@ -4,7 +4,8 @@ import { clientCases } from '@/data/client-cases';
 import { getCurrentLocale, getTranslator } from '@/lib/i18n';
 
 export default async function ClientsSection() {
-  const t = await getTranslator(getCurrentLocale());
+  const locale = await getCurrentLocale();
+  const t = await getTranslator(locale);
   return (
     <section className='py-20 md:py-32 bg-background'>
       <div className='container max-w-screen-xl mx-auto px-4 md:px-6'>

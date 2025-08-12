@@ -4,7 +4,8 @@ import { BLUR_PLACEHOLDER } from '@/lib/blur';
 import { getCurrentLocale, getTranslator } from '@/lib/i18n';
 
 export default async function AuditSection() {
-  const t = await getTranslator(getCurrentLocale());
+  const locale = await getCurrentLocale();
+  const t = await getTranslator(locale);
   return (
     <section className='py-20 md:py-32'>
       <div className='container px-4 md:px-6'>

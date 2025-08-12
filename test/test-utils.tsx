@@ -18,10 +18,6 @@ vi.mock('next/link', () => ({
   ),
 }));
 
-vi.mock('@/lib/i18n', () => ({
-  getCurrentLocale: () => 'pt',
-  getTranslator: async () => (key: string) => key,
-}));
 
 class ResizeObserverStub {
   observe() {}

@@ -2,7 +2,8 @@ import { Button } from '@/components/atoms/ui/button';
 import { getCurrentLocale, getTranslator } from '@/lib/i18n';
 
 export default async function Hero() {
-  const t = await getTranslator(getCurrentLocale());
+  const locale = await getCurrentLocale();
+  const t = await getTranslator(locale);
   return (
     <section className='relative py-20 md:py-32 overflow-hidden'>
       {/* Geometric Background Pattern */}

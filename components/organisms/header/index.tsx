@@ -12,11 +12,12 @@ import { navItems } from "@/data/navigation";
 import LanguageSwitcher from "@/components/atoms/language-switcher";
 import ModeToggle from "@/components/atoms/mode-toggle";
 import { getCurrentLocale, getTranslator } from "@/lib/i18n";
+import { Locale } from "@/lib/i18n/config";
 
 export default async function Header() {
-  const locale = getCurrentLocale();
+  const locale = await getCurrentLocale();
   const t = await getTranslator(locale);
-  const languages = [
+  const languages: { value: Locale; label: string; flag: string }[] = [
     { value: "en", label: t("languages.en"), flag: "🇺🇸" },
     { value: "es", label: t("languages.es"), flag: "🇪🇸" },
     { value: "pt", label: t("languages.pt"), flag: "🇧🇷" },

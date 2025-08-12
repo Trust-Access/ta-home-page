@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { getCurrentLocale, getTranslator } from '@/lib/i18n';
 
 export default async function Footer() {
-  const t = await getTranslator(getCurrentLocale());
+  const locale = await getCurrentLocale();
+  const t = await getTranslator(locale);
   return (
     <footer className='bg-gray-900 text-white py-12'>
       <div className='container px-4 md:px-6'>

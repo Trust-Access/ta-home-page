@@ -11,7 +11,8 @@ import { Users, Shield, Lock } from 'lucide-react';
 import { getCurrentLocale, getTranslator } from '@/lib/i18n';
 
 export default async function ServicesSection() {
-  const t = await getTranslator(getCurrentLocale());
+  const locale = await getCurrentLocale();
+  const t = await getTranslator(locale);
   return (
     <section id='services' className='py-20 md:py-32'>
       <div className='container px-4 md:px-6'>

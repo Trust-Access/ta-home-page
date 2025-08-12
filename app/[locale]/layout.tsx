@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import { RootLayoutBase } from "../layout";
+import RootLayoutBase from "../root-layout-base";
 
 export default async function LocaleLayout({
   children,

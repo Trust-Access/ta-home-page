@@ -8,8 +8,9 @@ const dictionaries: Record<Locale, () => Promise<Record<string, unknown>>> = {
   pt: () => import('./pt.json').then((m) => m.default),
 };
 
-export function getCurrentLocale(): Locale {
-  const cookieLocale = cookies().get('NEXT_LOCALE')?.value as Locale | undefined;
+export async function getCurrentLocale(): Promise<Locale> {
+  const cookieStore = await cookies();
+  const cookieLocale = cookieStore.get('NEXT_LOCALE')?.value as Locale | undefined;
   return cookieLocale && SUPPORTED_LOCALES.includes(cookieLocale)
     ? cookieLocale
     : 'pt';
