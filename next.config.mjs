@@ -15,6 +15,12 @@ const nextConfig = {
       },
     ],
   },
+  i18n: {
+    locales: ['en', 'es', 'pt'],
+    defaultLocale: 'pt',
+    // Disable automatic locale detection to prevent redirects to unsupported routes.
+    localeDetection: false,
+  },
 };
 
-export default nextConfig
+export default nextConfig;
