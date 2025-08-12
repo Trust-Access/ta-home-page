@@ -3,9 +3,18 @@ import { NextRequest, NextResponse } from "next/server";
 const SUPPORTED_LOCALES = ["en", "es", "pt"] as const;
 type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
 const DEFAULT_LOCALE: SupportedLocale = "pt";
+const CANONICAL_DOMAIN = process.env.CANONICAL_DOMAIN;
 
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const url = request.nextUrl.clone();
+  const host = request.headers.get("host")?.split(":")[0];
+
+  if (CANONICAL_DOMAIN && host && host !== CANONICAL_DOMAIN) {
+    url.hostname = CANONICAL_DOMAIN;
+    return NextResponse.redirect(url, 301);
+  }
+
+  const { pathname } = url;
   const pathLocale = pathname.split("/")[1];
 
   if (SUPPORTED_LOCALES.includes(pathLocale as SupportedLocale)) {
@@ -25,7 +34,10 @@ export function middleware(request: NextRequest) {
     ?.toLowerCase();
 
   let locale: SupportedLocale = DEFAULT_LOCALE;
-  if (cookieLocale && SUPPORTED_LOCALES.includes(cookieLocale as SupportedLocale)) {
+  if (
+    cookieLocale &&
+    SUPPORTED_LOCALES.includes(cookieLocale as SupportedLocale)
+  ) {
     locale = cookieLocale as SupportedLocale;
   } else if (
     headerLocale &&
