@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { vi } from "vitest";
+import { beforeEach, vi } from "vitest";
 
 let currentPath = "/pt";
 export const routerPush = vi.fn((path: string) => {
