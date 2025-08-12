@@ -40,21 +40,30 @@ const loaders: Record<
   pt: () => import("./pt.json"),
 };
 
-export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("pt");
+export function I18nProvider({
+  children,
+  initialLocale = "pt",
+}: {
+  children: React.ReactNode;
+  initialLocale?: Locale;
+}) {
+  const [locale, setLocale] = useState<Locale>(initialLocale);
   const [dictionary, setDictionary] = useState<Record<string, unknown>>({});
 
   useEffect(() => {
     const storedLocale = localStorage.getItem("locale") as Locale | null;
     if (storedLocale) {
       setLocale(storedLocale);
+    } else {
+      setLocale(initialLocale);
     }
-  }, []);
+  }, [initialLocale]);
 
   useEffect(() => {
     loaders[locale]().then((module) => setDictionary(module.default));
     document.documentElement.lang = locale;
     localStorage.setItem("locale", locale);
+    document.cookie = `NEXT_LOCALE=${locale}; path=/`;
   }, [locale]);
 
   function t(key: string) {

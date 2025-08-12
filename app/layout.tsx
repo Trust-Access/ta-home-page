@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/config";
 import { QueryProvider } from "@/components/templates/query-provider";
-import { I18nProvider } from "@/lib/i18n";
+import { I18nProvider, type Locale } from "@/lib/i18n";
 import { ThemeProvider } from "@/components/templates/theme-provider";
 import { cookies } from "next/headers";
 
@@ -85,7 +85,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const cookieStore = await cookies();
-  const locale = cookieStore.get("NEXT_LOCALE")?.value || "pt";
+  const locale = (cookieStore.get("NEXT_LOCALE")?.value as Locale) || "pt";
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -124,7 +124,7 @@ export default async function RootLayout({
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <I18nProvider>
+          <I18nProvider initialLocale={locale}>
             <QueryProvider>{children}</QueryProvider>
           </I18nProvider>
         </ThemeProvider>
