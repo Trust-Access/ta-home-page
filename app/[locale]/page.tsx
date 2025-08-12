@@ -4,10 +4,12 @@ import { redirect } from "next/navigation";
 const supportedLocales = ["en", "es", "pt"];
 
 interface LocaleParams {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
-export default function LocalePage({ params: { locale } }: LocaleParams) {
+export default async function LocalePage({ params }: LocaleParams) {
+  const { locale } = await params;
+
   if (!supportedLocales.includes(locale)) {
     redirect("/");
   }
