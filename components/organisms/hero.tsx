@@ -1,10 +1,9 @@
-"use client";
-
 import { Button } from '@/components/atoms/ui/button';
-import { useI18n } from '@/lib/i18n';
+import { getCurrentLocale, getTranslator } from '@/lib/i18n';
 
-export default function Hero() {
-  const { t } = useI18n();
+export default async function Hero() {
+  const locale = await getCurrentLocale();
+  const t = await getTranslator(locale);
   return (
     <section className='relative py-20 md:py-32 overflow-hidden'>
       {/* Geometric Background Pattern */}

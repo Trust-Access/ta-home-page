@@ -11,6 +11,13 @@ vi.mock("next/navigation", () => ({
   usePathname: () => currentPath,
 }));
 
+vi.mock('server-only', () => ({}));
+
+vi.mock('@/lib/i18n', () => ({
+  getCurrentLocale: async () => 'pt',
+  getTranslator: async () => (key: string) => key,
+}));
+
 beforeEach(() => {
   routerPush.mockClear();
   currentPath = "/pt";

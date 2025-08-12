@@ -1,9 +1,8 @@
-"use client";
+import { getCurrentLocale, getTranslator } from '@/lib/i18n';
 
-import { useI18n } from '@/lib/i18n';
-
-export default function TrustSection() {
-  const { t } = useI18n();
+export default async function TrustSection() {
+  const locale = await getCurrentLocale();
+  const t = await getTranslator(locale);
   return (
     <section className='py-16 bg-gradient-to-r from-teal-50 to-blue-50 dark:from-teal-900 dark:to-blue-900'>
       <div className='container px-4 md:px-6'>

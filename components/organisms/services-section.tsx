@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from '@/components/atoms/ui/button';
 import { Input } from '@/components/atoms/ui/input';
 import {
@@ -10,10 +8,11 @@ import {
   SelectValue,
 } from '@/components/atoms/ui/select';
 import { Users, Shield, Lock } from 'lucide-react';
-import { useI18n } from '@/lib/i18n';
+import { getCurrentLocale, getTranslator } from '@/lib/i18n';
 
-export default function ServicesSection() {
-  const { t } = useI18n();
+export default async function ServicesSection() {
+  const locale = await getCurrentLocale();
+  const t = await getTranslator(locale);
   return (
     <section id='services' className='py-20 md:py-32'>
       <div className='container px-4 md:px-6'>

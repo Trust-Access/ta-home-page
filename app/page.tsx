@@ -1,51 +1,27 @@
-import dynamic from 'next/dynamic';
-import { Suspense } from 'react';
-import { Skeleton } from '@/components/atoms/ui/skeleton';
-
-const Header = dynamic(() => import('@/components/organisms/header'));
-const Hero = dynamic(() => import('@/components/organisms/hero'));
-const TrustSection = dynamic(() => import('@/components/organisms/trust-section'));
-const ServicesSection = dynamic(() => import('@/components/organisms/services-section'));
-const ComplianceSection = dynamic(() => import('@/components/organisms/compliance-section'));
-const AuditSection = dynamic(() => import('@/components/organisms/audit-section'));
-const TestimonialsSection = dynamic(() => import('@/components/organisms/testimonials-section'));
-const ClientsSection = dynamic(() => import('@/components/organisms/clients-section'));
-const DemoForm = dynamic(() => import('@/components/molecules/demo-form'));
-const Footer = dynamic(() => import('@/components/organisms/footer'));
+import Header from '@/components/organisms/header';
+import Hero from '@/components/organisms/hero';
+import TrustSection from '@/components/organisms/trust-section';
+import ServicesSection from '@/components/organisms/services-section';
+import ComplianceSection from '@/components/organisms/compliance-section';
+import AuditSection from '@/components/organisms/audit-section';
+import TestimonialsSection from '@/components/organisms/testimonials-section';
+import ClientsSection from '@/components/organisms/clients-section';
+import DemoForm from '@/components/molecules/demo-form';
+import Footer from '@/components/organisms/footer';
 
 export default function TrustAccessLanding() {
   return (
     <div className='min-h-screen bg-background'>
-      <Suspense fallback={<Skeleton className='h-16 w-full' />}>
-        <Header />
-      </Suspense>
-      <Suspense fallback={<Skeleton className='h-[400px] w-full' />}>
-        <Hero />
-      </Suspense>
-      <Suspense fallback={<Skeleton className='h-[400px] w-full' />}>
-        <TrustSection />
-      </Suspense>
-      <Suspense fallback={<Skeleton className='h-[400px] w-full' />}>
-        <ServicesSection />
-      </Suspense>
-      <Suspense fallback={<Skeleton className='h-[400px] w-full' />}>
-        <ComplianceSection />
-      </Suspense>
-      <Suspense fallback={<Skeleton className='h-[400px] w-full' />}>
-        <AuditSection />
-      </Suspense>
-      <Suspense fallback={<Skeleton className='h-[400px] w-full' />}>
-        <TestimonialsSection />
-      </Suspense>
-      <Suspense fallback={<Skeleton className='h-[400px] w-full' />}>
-        <ClientsSection />
-      </Suspense>
-      <Suspense fallback={<Skeleton className='h-[400px] w-full' />}>
-        <DemoForm />
-      </Suspense>
-      <Suspense fallback={<Skeleton className='h-64 w-full' />}>
-        <Footer />
-      </Suspense>
+      <Header />
+      <Hero />
+      <TrustSection />
+      <ServicesSection />
+      <ComplianceSection />
+      <AuditSection />
+      <TestimonialsSection />
+      <ClientsSection />
+      <DemoForm />
+      <Footer />
     </div>
   );
 }

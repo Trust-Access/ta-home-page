@@ -18,9 +18,6 @@ vi.mock('next/link', () => ({
   ),
 }));
 
-vi.mock('@/lib/i18n', () => ({
-  useI18n: () => ({ t: (key: string) => key }),
-}));
 
 class ResizeObserverStub {
   observe() {}
