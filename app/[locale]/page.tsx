@@ -1,7 +1,8 @@
 import { redirect } from "next/navigation";
 import HomePage from "../page";
 
-const supportedLocales = ["en", "es", "pt"];
+const SUPPORTED_LOCALES = ["en", "es", "pt"] as const;
+type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
 
 interface LocaleParams {
   params: Promise<{ locale: string }>;
@@ -10,7 +11,7 @@ interface LocaleParams {
 export default async function LocalePage({ params }: LocaleParams) {
   const { locale } = await params;
 
-  if (!supportedLocales.includes(locale)) {
+  if (!SUPPORTED_LOCALES.includes(locale as SupportedLocale)) {
     redirect("/");
   }
   return <HomePage />;
