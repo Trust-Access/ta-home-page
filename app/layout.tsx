@@ -5,7 +5,6 @@ import { siteConfig } from "@/lib/config";
 import { QueryProvider } from "@/components/templates/query-provider";
 import { I18nProvider } from "@/lib/i18n";
 import { ThemeProvider } from "@/components/templates/theme-provider";
-import { cookies } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -79,13 +78,15 @@ export const viewport: Viewport = {
   themeColor: "#0A0A0A",
 };
 
-export default async function RootLayout({
-  children,
-}: {
+interface RootLayoutProps {
   children: React.ReactNode;
-}) {
-  const cookieStore = await cookies();
-  const locale = cookieStore.get("NEXT_LOCALE")?.value || "pt";
+  locale?: string;
+}
+
+export function RootLayoutBase({
+  children,
+  locale = "pt",
+}: RootLayoutProps) {
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -131,4 +132,8 @@ export default async function RootLayout({
       </body>
     </html>
   );
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return <RootLayoutBase>{children}</RootLayoutBase>;
 }
