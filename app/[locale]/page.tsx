@@ -14,6 +14,7 @@ export default async function LocalePage({ params }: LocaleParams) {
     redirect("/");
   }
 
-  cookies().set("NEXT_LOCALE", locale);
+  const cookieStore = await cookies();
+  cookieStore.set("NEXT_LOCALE", locale);
   redirect("/");
 }
