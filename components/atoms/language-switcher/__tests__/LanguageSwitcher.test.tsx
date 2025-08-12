@@ -3,10 +3,12 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import LanguageSwitcher from "@/components/atoms/language-switcher";
 import { I18nProvider } from "@/lib/i18n";
+import { routerPush } from "@/vitest.setup";
 
 describe("LanguageSwitcher", () => {
   beforeEach(() => {
     localStorage.clear();
+    routerPush.mockClear();
   });
 
   it("allows keyboard navigation to change language", async () => {
@@ -25,6 +27,7 @@ describe("LanguageSwitcher", () => {
     await screen.findByText("English");
     expect(trigger).toHaveTextContent("English");
     expect(localStorage.getItem("locale")).toBe("en");
+    expect(routerPush).toHaveBeenCalledWith("/en");
   });
 
   it("renders options with accessible labels", async () => {
